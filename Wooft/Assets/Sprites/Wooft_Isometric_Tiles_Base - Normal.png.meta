@@ -634,6 +634,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base - Normal_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f2161a29e50fa4a922a2c917cac0cb
+      internalID: -291952029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base - Normal_25
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3689d1f3028d348bb50aecee59bfa2
+      internalID: 1138372385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -656,6 +698,7 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base - Normal_10: -434400117
       Wooft_Isometric_Tiles_Base - Normal_18: -1649856358
       Wooft_Isometric_Tiles_Base - Normal_11: -1560552247
+      Wooft_Isometric_Tiles_Base - Normal_25: 1138372385
       Wooft_Isometric_Tiles_Base - Normal_2: -1013576896
       Wooft_Isometric_Tiles_Base - Normal_14: -2089563979
       Wooft_Isometric_Tiles_Base - Normal_1: 761643421
@@ -666,6 +709,7 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base - Normal_5: -1065820136
       Wooft_Isometric_Tiles_Base - Normal_6: 1178185067
       Wooft_Isometric_Tiles_Base - Normal_16: 1295853283
+      Wooft_Isometric_Tiles_Base - Normal_24: -291952029
       Wooft_Isometric_Tiles_Base - Normal_19: -381023473
       Wooft_Isometric_Tiles_Base - Normal_13: 134937350
       Wooft_Isometric_Tiles_Base - Normal_21: 1792677575
