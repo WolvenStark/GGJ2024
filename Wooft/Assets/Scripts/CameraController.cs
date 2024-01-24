@@ -16,13 +16,11 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp
-            (
-                transform.position, 
-                new Vector3(target.position.x, target.position.y, transform.position.z), 
-                smoothSpeed * Time.deltaTime
-            );
+        var targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
+        Vector3 velocity = (targetPos - transform.position) * smoothSpeed;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
 
+        // Clamp the position between the bounds
         transform.position = new Vector3
             (
                 Mathf.Clamp(transform.position.x, minX, maxX),
