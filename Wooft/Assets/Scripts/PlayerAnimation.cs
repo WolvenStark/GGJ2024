@@ -11,40 +11,38 @@ public class PlayerAnimation : MonoBehaviour
     public string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
     public string[] runDirections = { "Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE" };
 
-    int lastDirection;
+    protected int[] staticDirectionsHash;
+    protected int[] runDirectionsHash;
+
+    protected int lastDirection = 0;
     protected float directionalSliceCount = 8;
-    protected float minimumVelocityThreshold = 0.3f;
+    protected float minimumVelocityThreshold = 0.01f;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
 
-        float result1 = Vector2.SignedAngle(Vector2.up, Vector2.right);
-        Debug.Log("R1 " + result1);
-
-        float result2 = Vector2.SignedAngle(Vector2.up, Vector2.left);
-        Debug.Log("R2 " + result2);
-
-        float result3 = Vector2.SignedAngle(Vector2.up, Vector2.down);
-        Debug.Log("R3 " + result3);
+        staticDirectionsHash = AnimatorStringArrayToHashArray(staticDirections);
+        runDirectionsHash = AnimatorStringArrayToHashArray(runDirections);
     }
 
     // Directional animation
     public void SetDirection(Vector2 _direction)
     {
-        string[] directionArray = null;
+        // Use the hash version of the animation names
+        int[] directionArray = null;
 
         // The character is static if their velocity is close enough to zero.
         if (_direction.magnitude < minimumVelocityThreshold)
         {
-            directionArray = staticDirections;
+            directionArray = staticDirectionsHash;
         }
         else
         {
-            directionArray = runDirections;
+            directionArray = runDirectionsHash;
 
             // Gets the index of the slcie from the direction vector
-            lastDirection = DirectionToIndex(_direction); 
+            lastDirection = DirectionToIndex(_direction);
         }
 
         anim.Play(directionArray[lastDirection]);
@@ -54,16 +52,16 @@ public class PlayerAnimation : MonoBehaviour
     private int DirectionToIndex(Vector2 _direction)
     {
         // Return this vector with a magnitude of 1 and get the normalized to an index
-        Vector2 norDir = _direction.normalized; 
+        Vector2 normDir = _direction.normalized; 
 
         // Calculate the degrees within a single slice / direction
         float step = 360 / directionalSliceCount;
-        float offset = step / 2;
+        float halfstep = step / 2;
 
         // Returns the signed angle in degrees between A and B
-        float angle = Vector2.SignedAngle(Vector2.up, norDir);
+        float angle = Vector2.SignedAngle(Vector2.up, normDir);
 
-        angle += offset;
+        angle += halfstep;
 
         // Wrap around negative number
         if (angle < 0)
@@ -73,5 +71,21 @@ public class PlayerAnimation : MonoBehaviour
 
         float stepCount = angle / step;
         return Mathf.FloorToInt(stepCount);
+    }
+
+    /// <summary>
+    /// Converts a string array to a int (animator hash) array.
+    /// </summary>
+    /// <param name="animationArray"></param>
+    /// <returns></returns>
+    public static int[] AnimatorStringArrayToHashArray(string[] animationArray)
+    {
+        // Allocate the same array length for our hash array
+        int[] hashArray = new int[animationArray.Length];
+        for (int i = 0; i < animationArray.Length; i++)
+        {
+            hashArray[i] = Animator.StringToHash(animationArray[i]);
+        }
+        return hashArray;
     }
 }
