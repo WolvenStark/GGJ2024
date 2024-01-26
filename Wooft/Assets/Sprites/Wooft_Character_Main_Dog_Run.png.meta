@@ -139,7 +139,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,6 +277,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca820b209255b0345870b395c800bfed
+      internalID: -505698808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c107a3fe3e230cf4b9f8af6636ef7743
+      internalID: 859266843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6dadd020052a64ea152a2da23e308e
+      internalID: -30537539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a69d6ee49e42e48bc68f842eba0d1a
+      internalID: 1854555520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b419aad5645764b93d9f9ded09fba9
+      internalID: -1388133479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Character_Main_Dog_Run_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afddbfa9d76bf24997eeb7615ef0afd
+      internalID: 539009367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -290,9 +416,15 @@ TextureImporter:
     nameFileIdTable:
       Wooft_Character_Main_Dog_Run_0: -1156449217
       Wooft_Character_Main_Dog_Run_6: -317750505
+      Wooft_Character_Main_Dog_Run_8: 859266843
+      Wooft_Character_Main_Dog_Run_12: 539009367
       Wooft_Character_Main_Dog_Run_4: -71404158
       Wooft_Character_Main_Dog_Run_3: -1386469397
       Wooft_Character_Main_Dog_Run_5: 1694058841
+      Wooft_Character_Main_Dog_Run_7: -505698808
+      Wooft_Character_Main_Dog_Run_10: 1854555520
+      Wooft_Character_Main_Dog_Run_9: -30537539
+      Wooft_Character_Main_Dog_Run_11: -1388133479
       Wooft_Character_Main_Dog_Run_2: 842625374
       Wooft_Character_Main_Dog_Run_1: 1015540209
   spritePackingTag: 

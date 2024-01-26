@@ -135,14 +135,21 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
+        y: 480
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -12, y: 4}
+        - {x: -12, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 0}
+        - {x: 14, y: 8}
+        - {x: 6, y: 15}
       tessellationDetail: 0
       bones: []
       spriteID: 532c3b787d59d9544bafe40ef87a4def
@@ -156,11 +163,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 448
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,11 +184,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 416
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,11 +205,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 384
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,11 +226,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 352
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -240,14 +247,21 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
+        y: 320
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 6, y: 15}
+        - {x: -7, y: 15}
+        - {x: -11, y: 7}
+        - {x: -11, y: -12}
+        - {x: -10, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 6}
       tessellationDetail: 0
       bones: []
       spriteID: b2d653dfe906f2f4581118a56bf1c87f
@@ -261,14 +275,24 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
+        y: 288
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 10}
+        - {x: 13, y: 14}
+        - {x: -14, y: 14}
+        - {x: -16, y: 12}
+        - {x: -16, y: -7}
+        - {x: -11, y: -16}
+        - {x: 0, y: -16}
+        - {x: 1, y: -15}
+        - {x: 3, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: bee7c17171b37164893a059f19c54819
@@ -282,14 +306,21 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 416
+        y: 256
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 6, y: 15}
+        - {x: -7, y: 15}
+        - {x: -11, y: 7}
+        - {x: -11, y: -12}
+        - {x: -10, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 6}
       tessellationDetail: 0
       bones: []
       spriteID: a02a24608f9aea048b519d84c8bc61e3
@@ -303,102 +334,23 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 224
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 14}
+        - {x: -16, y: -16}
+        - {x: 12, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 14}
       tessellationDetail: 0
       bones: []
       spriteID: 433052e192ebfd34a80634fff826e63c
       internalID: -1177994296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wooft_Character_Main_Dog_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 352
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2569f29e538b94a9bbdbf38356d73c
-      internalID: 2014498885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wooft_Character_Main_Dog_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 320
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f157fe5d4434e0a479bbb3b4f397b884
-      internalID: -1820604813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wooft_Character_Main_Dog_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 288
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c793fa5dc4ad72d4fb5537cbf69bbe74
-      internalID: 2087366492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wooft_Character_Main_Dog_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f34f80f0f6297ce4f92a3e83f5b9f36a
-      internalID: -841083704
       vertices: []
       indices: 
       edges: []
@@ -414,11 +366,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wooft_Character_Main_Dog_10: -1820604813
-      Wooft_Character_Main_Dog_12: -841083704
       Wooft_Character_Main_Dog_4: -1165668920
-      Wooft_Character_Main_Dog_9: 2014498885
-      Wooft_Character_Main_Dog_11: 2087366492
       Wooft_Character_Main_Dog_1: -480417087
       Wooft_Character_Main_Dog_0: 1422923997
       Wooft_Character_Main_Dog_3: 251668236
