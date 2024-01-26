@@ -33,25 +33,26 @@ public class ProgressBar : MonoBehaviour
 
     public void Update()
     {
-        if (progress.value < (targetProgress - errorAllowance) && progress.value < progress.maxValue)
+        if (progress.value < targetProgress)
         {
-            var step = Mathf.Clamp((targetProgress - progress.value), 0, maxFillSpeed);
-            progress.value += step * Time.deltaTime;
+            //var step = Mathf.Clamp((targetProgress - progress.value), 0, maxFillSpeed);
+            progress.value += maxFillSpeed * Time.deltaTime;
 
             if (!particleEffect.isPlaying)
             {
                 particleEffect.Play();
             }
         }
-        else if (progress.value > (targetProgress - errorAllowance) && progress.value > progress.minValue)
-        {
-            var step = Mathf.Clamp((progress.value - targetProgress), 0, maxFillSpeed);
-            progress.value -= step * Time.deltaTime;
+        //else if (progress.value > targetProgress && progress.value > progress.minValue)
+        //{
+        //    var step = Mathf.Clamp((progress.value - targetProgress), 0, maxFillSpeed);
+        //    progress.value -= step * Time.deltaTime;
 
-            particleEffect.Stop();
-        }
+        //    particleEffect.Stop();
+        //}
         else
         {
+            //progress.value = targetProgress;
             particleEffect.Stop();
         }
 
@@ -60,7 +61,7 @@ public class ProgressBar : MonoBehaviour
     public void IncrementProgress(float newProgress)
     {
         targetProgress = progress.value + newProgress;
-        targetProgress = Mathf.Clamp01(targetProgress);
+        //targetProgress = Mathf.Clamp01(targetProgress);
 
         source.PlayOneShot(incrementSound);
     }
@@ -68,7 +69,7 @@ public class ProgressBar : MonoBehaviour
     public void DecrementProgress(float newProgress)
     {
         targetProgress = progress.value - newProgress;
-        targetProgress = Mathf.Clamp(targetProgress, progress.minValue, progress.maxValue);
+        //targetProgress = Mathf.Clamp01(targetProgress, progress.minValue, progress.maxValue);
 
         source.PlayOneShot(decrementSound);
     }
