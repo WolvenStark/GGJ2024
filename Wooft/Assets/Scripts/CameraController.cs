@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
+    [HideInInspector]
+    public Camera cam;
     private Transform target;
     [SerializeField] private float smoothSpeed;
     [SerializeField] private float minX, maxX, minY, maxY;
@@ -12,6 +15,7 @@ public class CameraController : MonoBehaviour
     {
         // Find the main player and get it's transform
         target = GameObject.FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Transform>();
+        cam = gameObject.GetComponent<Camera>();
     }
 
     private void LateUpdate()
