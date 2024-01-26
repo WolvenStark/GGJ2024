@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator anim;
+    protected CameraZoom camZoom;
 
     public string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
     public string[] runDirections = { "Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE" };
@@ -21,6 +22,7 @@ public class PlayerAnimation : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        camZoom = FindObjectOfType<CameraZoom>();
 
         staticDirectionsHash = AnimatorStringArrayToHashArray(staticDirections);
         runDirectionsHash = AnimatorStringArrayToHashArray(runDirections);
@@ -32,8 +34,10 @@ public class PlayerAnimation : MonoBehaviour
         // Use the hash version of the animation names
         int[] directionArray = null;
 
+        bool isPlayerStill = (_direction.magnitude < minimumVelocityThreshold);
+
         // The character is static if their velocity is close enough to zero.
-        if (_direction.magnitude < minimumVelocityThreshold)
+        if (isPlayerStill)
         {
             directionArray = staticDirectionsHash;
         }
@@ -44,6 +48,8 @@ public class PlayerAnimation : MonoBehaviour
             // Gets the index of the slcie from the direction vector
             lastDirection = DirectionToIndex(_direction);
         }
+
+        camZoom.UpdateZoom(isPlayerStill);
 
         anim.Play(directionArray[lastDirection]);
     }
