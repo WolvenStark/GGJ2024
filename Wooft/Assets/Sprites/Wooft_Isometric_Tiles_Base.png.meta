@@ -145,10 +145,10 @@ TextureImporter:
       physicsShape:
       - - {x: -1, y: 16}
         - {x: -15, y: 9}
-        - {x: -15, y: -9}
-        - {x: -1, y: -16}
-        - {x: 1, y: -16}
-        - {x: 15, y: -9}
+        - {x: -15, y: 6}
+        - {x: -1, y: -1}
+        - {x: 1, y: -1}
+        - {x: 15, y: 6}
         - {x: 15, y: 9}
         - {x: 1, y: 16}
       tessellationDetail: 0
@@ -174,10 +174,10 @@ TextureImporter:
       physicsShape:
       - - {x: -1, y: 8}
         - {x: -15, y: 1}
-        - {x: -15, y: -9}
-        - {x: -1, y: -16}
-        - {x: 1, y: -16}
-        - {x: 15, y: -9}
+        - {x: -15, y: -2}
+        - {x: -1, y: -9}
+        - {x: 1, y: -9}
+        - {x: 15, y: -2}
         - {x: 15, y: 1}
         - {x: 1, y: 8}
       tessellationDetail: 0
@@ -319,10 +319,10 @@ TextureImporter:
       physicsShape:
       - - {x: -1, y: 16}
         - {x: -15, y: 9}
-        - {x: -15, y: -9}
-        - {x: -1, y: -16}
-        - {x: 1, y: -16}
-        - {x: 15, y: -9}
+        - {x: -15, y: 6}
+        - {x: -1, y: -1}
+        - {x: 1, y: -1}
+        - {x: 15, y: 6}
         - {x: 15, y: 9}
         - {x: 1, y: 16}
       tessellationDetail: 0
@@ -348,10 +348,10 @@ TextureImporter:
       physicsShape:
       - - {x: -1, y: 8}
         - {x: -15, y: 1}
-        - {x: -15, y: -9}
-        - {x: -1, y: -16}
-        - {x: 1, y: -16}
-        - {x: 15, y: -9}
+        - {x: -15, y: -2}
+        - {x: -1, y: -9}
+        - {x: 1, y: -9}
+        - {x: 15, y: -2}
         - {x: 15, y: 1}
         - {x: 1, y: 8}
       tessellationDetail: 0
