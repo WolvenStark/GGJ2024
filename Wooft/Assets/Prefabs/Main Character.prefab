@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 210271496733434314}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &210271496099973064
 Rigidbody2D:
@@ -79,6 +79,8 @@ GameObject:
   - component: {fileID: 210271496733434314}
   - component: {fileID: 210271496733434308}
   - component: {fileID: 210271496733434315}
+  - component: {fileID: 1671850697}
+  - component: {fileID: 1671850698}
   m_Layer: 0
   m_Name: Wooft_Character_Main_Dog_1
   m_TagString: Untagged
@@ -139,8 +141,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -404044137
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -480417087, guid: 7633f2501a62e9a4ebf35957f815ab71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,6 +168,56 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.08}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.008
+--- !u!95 &1671850697
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210271496733434313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71bc6269491e3c84db49f74810bed8a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1671850698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210271496733434313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854a332055b1b814684de39fdcbf717a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staticDirections:
+  - Static N
+  - Static NW
+  - Static W
+  - Static SW
+  - Static S
+  - Static SE
+  - Static E
+  - Static NE
+  runDirections:
+  - Run N
+  - Run NW
+  - Run W
+  - Run SW
+  - Run S
+  - Run SE
+  - Run E
+  - Run NE
