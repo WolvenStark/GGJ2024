@@ -901,6 +901,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598053cf80b7a6a4ca485b352654b163
+      internalID: 1925045687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c66a3bc4404c9d4db5f1dac1aae6c46
+      internalID: -360272479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -924,6 +966,7 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base_4: -1428839842
       Wooft_Isometric_Tiles_Base_6: -1440153425
       Wooft_Isometric_Tiles_Base_14: -2105685612
+      Wooft_Isometric_Tiles_Base_28: -360272479
       Wooft_Isometric_Tiles_Base_2: -795358817
       Wooft_Isometric_Tiles_Base_12: 1907211830
       Wooft_Isometric_Tiles_Base_10: -1329485439
@@ -935,6 +978,7 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base_23: 827159024
       Wooft_Isometric_Tiles_Base_20: -410302387
       Wooft_Isometric_Tiles_Base_25: -1672899975
+      Wooft_Isometric_Tiles_Base_27: 1925045687
       Wooft_Isometric_Tiles_Base_19: 686089445
       Wooft_Isometric_Tiles_Base_17: 1757990277
       Wooft_Isometric_Tiles_Base_24: -1040810433
