@@ -256,6 +256,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_BaseBedroom - Normal_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d3e1853894d134ba53ccdffa36a4e6
+      internalID: 432672612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_BaseBedroom - Normal_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c60db4ae06cbd7429fb91a9c713ab2e
+      internalID: 1575896437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -269,8 +311,10 @@ TextureImporter:
     nameFileIdTable:
       Wooft_Isometric_Tiles_BaseBedroom - Normal_5: -134045753
       Wooft_Isometric_Tiles_BaseBedroom - Normal_4: 1294806490
+      Wooft_Isometric_Tiles_BaseBedroom - Normal_7: 1575896437
       Wooft_Isometric_Tiles_BaseBedroom - Normal_0: 1373521100
       Wooft_Isometric_Tiles_BaseBedroom - Normal_2: 1408487588
+      Wooft_Isometric_Tiles_BaseBedroom - Normal_6: 432672612
       Wooft_Isometric_Tiles_BaseBedroom - Normal_3: 953181492
       Wooft_Isometric_Tiles_BaseBedroom - Normal_1: 1314345313
   spritePackingTag: 
