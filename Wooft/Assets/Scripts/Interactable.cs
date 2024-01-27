@@ -1,29 +1,67 @@
-using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class Interactable : MonoBehaviour
 {
-    protected Collider col = null;
-    protected GameObject collidingObjs = null;
-
-    public void Start()
+    public enum InteractionType
     {
-        col = GetComponentInChildren<Collider>();
+        NONE,
+        PickUp,
+        Examine,
+        GrabDrop,
+        Consume,
+    }
+    public InteractionType interactType;
+
+    public string descriptionText;
+
+    [Header("Custom Events")]
+    public UnityEvent customEvent;
+    public UnityEvent consumeEvent;
+
+    [HideInInspector]
+    public SpriteRenderer spriteRenderer;
+
+    private int targetLayer = 6; // Interactable
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }   
+
+    private void Reset()
+    {
+        GetComponent<Collider2D>().isTrigger = true;
+        gameObject.layer = targetLayer;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Interact()
     {
-        Debug.Log("Trigger Enter");
-    }
+        switch (interactType)
+        {
+            case InteractionType.PickUp:
+                // Todo : Impliment
+                break;
+            case InteractionType.Examine:
+                InteractionSystem.Instance.ExamineItem(this);
+                break;
+            case InteractionType.GrabDrop:
+                InteractionSystem.Instance.GrabDrop();
+                break;
+            case InteractionType.Consume:
+                InteractionSystem.Instance.GrabDrop();
+                gameObject.SetActive(false);
+                break;
+            default:
+                Debug.Log("Interactable has unknown type assigned");
+                break;
+        }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("Trigger Stay");
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("Trigger Exit");
+        customEvent.Invoke();
     }
 }
+
+

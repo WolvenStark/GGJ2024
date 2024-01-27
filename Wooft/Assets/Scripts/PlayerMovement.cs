@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     protected float moveSpeed = 1.0f;
 
+    protected Interactable lastInteraction = null;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,5 +30,16 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         playerAnimation.SetDirection(movement);
         rb.MovePosition(newPos);
+    }
+
+    public void SetAsActiveInteractable(Interactable target)
+    {
+        Debug.Log("Changing from " + lastInteraction.ToString() + " to " + target.ToString());
+        lastInteraction = target;
+    }
+
+    public void ClearActiveInteractable()
+    {
+        lastInteraction = null;
     }
 }
