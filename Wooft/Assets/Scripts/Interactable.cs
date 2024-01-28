@@ -24,9 +24,13 @@ public class Interactable : MonoBehaviour
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
+    [HideInInspector]
     public Collider2D col;
 
     private int targetLayer = 6; // Interactable
+
+    public string sfxInteract = "ScoreUp";
+    public string musicInteract = "MainTheme";
 
     private void Awake()
     {

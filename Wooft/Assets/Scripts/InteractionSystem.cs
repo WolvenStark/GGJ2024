@@ -217,7 +217,7 @@ public class InteractionSystem : MonoBehaviour
             grabbedObject = null;
 
             // Return music to normal
-            AudioManager.ChangeMusicCaller("MainTheme");
+            AudioManager.RestoreMainTheme();
 
         }
         //Check if we have nothing grabbed grab the detected item
@@ -235,7 +235,8 @@ public class InteractionSystem : MonoBehaviour
             TrackGrabbedObjectStats(item);
 
             // Change music to sock
-            AudioManager.ChangeMusicCaller("SockTheme");
+            AudioManager.ChangeMusicCaller(item.musicInteract);
+            AudioManager.PlaySFX(item.sfxInteract);
         }
     }
 

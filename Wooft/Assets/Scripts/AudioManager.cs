@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
     private static bool keepFadingOutMusic = false;
     private static bool keepFadingOutMusicIntro = false;
 
+    private static string mainThemeTrack = "MainTheme";
+
     private void Awake()
     {
         if (Instance == null)
@@ -139,7 +141,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(string trackName)
+    public static void PlaySFX(string trackName)
     {
         Sound s = Array.Find(Instance.sfxSounds, sound => sound.name == trackName);
 
@@ -318,5 +320,10 @@ public class AudioManager : MonoBehaviour
     public static void ChangeMusicCaller(string trackName)
     {
         Instance.StartCoroutine(ChangeMusic(trackName, musicClipSwapTracksDuration));
+    }
+
+    public static void RestoreMainTheme()
+    {
+        ChangeMusicCaller(mainThemeTrack);
     }
 }
