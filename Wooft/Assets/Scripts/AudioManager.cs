@@ -88,7 +88,7 @@ public class AudioManager : MonoBehaviour
 
     public static void PlayMusicIntro(string trackName)
     {
-        Debug.LogWarning("PlayMusicIntro " + trackName);
+        //Debug.LogWarning("PlayMusicIntro " + trackName);
 
         Sound s = Array.Find(Instance.musicIntroSounds, sound => sound.name == trackName);
 
@@ -110,7 +110,7 @@ public class AudioManager : MonoBehaviour
 
     public static void PlayMusic(string trackName, bool fadeIn)
     {
-        Debug.LogWarning("PlayMusic " + trackName);
+        //Debug.LogWarning("PlayMusic " + trackName);
 
         Sound s = Array.Find(Instance.musicSounds, sound => sound.name == trackName);
 
@@ -175,9 +175,9 @@ public class AudioManager : MonoBehaviour
 
     public static IEnumerator LoopMusic(string trackName, float clipLength, bool fadeIn)
     {
-        Debug.LogWarning("Loop Music - Begin Waiting " + trackName + " for " + clipLength + " seconds");
+        //Debug.LogWarning("Loop Music - Begin Waiting " + trackName + " for " + clipLength + " seconds");
         yield return new WaitForSeconds(Mathf.Round(clipLength + 0.05f));
-        Debug.LogWarning("Loop Music - Finished Waiting " + trackName);
+        //Debug.LogWarning("Loop Music - Finished Waiting " + trackName);
 
         PlayMusic(trackName, fadeIn);
     }
@@ -258,12 +258,12 @@ public class AudioManager : MonoBehaviour
         FadeOutMusicCaller(trackName, speed, musicMinVolume);
         FadeOutMusicIntroCaller(trackName, speed, musicMinVolume);
 
-        Debug.LogWarning("ChangeMusic " + trackName);
+        //Debug.LogWarning("ChangeMusic " + trackName);
 
         Sound s = Array.Find(Instance.musicSounds, sound => sound.name == trackName);
         Assert.IsNotNull(s, "Music " + trackName + " not found");
 
-        Debug.LogWarning("Change Music - Begin Waiting " + trackName);
+        //Debug.LogWarning("Change Music - Begin Waiting " + trackName);
         while (musicSource.volume > speed)
         {
             yield return new WaitForSeconds(0.01f);
@@ -271,7 +271,7 @@ public class AudioManager : MonoBehaviour
 
         // Stop the music
         musicSource.Stop();
-        Debug.LogWarning("Change Music - Finished Waiting " + trackName);
+        //Debug.LogWarning("Change Music - Finished Waiting " + trackName);
 
         if (s != null && !musicSource.isPlaying)
         {
