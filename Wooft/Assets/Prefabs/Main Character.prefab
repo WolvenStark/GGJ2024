@@ -130,6 +130,7 @@ MonoBehaviour:
   isExamining: 0
   isGrabbing: 0
   useIsometricYasZ: 1
+  detectedHighlightColor: {r: 0.748498, g: 0.3979047, b: 0.9056604, a: 1}
 --- !u!1 &210271496733434313
 GameObject:
   m_ObjectHideFlags: 0

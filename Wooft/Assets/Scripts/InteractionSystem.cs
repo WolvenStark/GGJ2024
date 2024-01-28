@@ -34,6 +34,9 @@ public class InteractionSystem : MonoBehaviour
     protected string grabbedOriginalLayer = "Default";
     protected int grabbedOriginalOrder = 1;
 
+    public Color detectedHighlightColor;
+    protected Color detectedOriginalColor = Color.white;
+
     private void Awake()
     {
         if (Instance == null)
@@ -76,19 +79,56 @@ public class InteractionSystem : MonoBehaviour
         return Input.GetKeyDown(KeyCode.E);
     }
 
+    public void RestoreDetetcedObjectStats()
+    {
+        if (detectedObject != null)
+        {
+            var detectedRenderer = detectedObject.GetComponentInChildren<SpriteRenderer>();
+            if (detectedRenderer != null)
+            {
+                detectedRenderer.color = detectedOriginalColor;
+            }
+        }
+    }
+
+    public void TrackDetetcedObjectStats()
+    {
+        if (detectedObject != null)
+        {
+            var detectedRenderer = detectedObject.GetComponentInChildren<SpriteRenderer>();
+            if (detectedRenderer != null)
+            {
+                detectedOriginalColor = detectedRenderer.color;
+
+                if (grabbedObject == detectedObject)
+                {
+                    RestoreDetetcedObjectStats();
+                }
+                else
+                {
+                    // Apply changes
+                    detectedRenderer.color = detectedHighlightColor;
+                }
+            }
+        }
+    }
+
     public bool DetectObject()
     {
-
         Collider2D obj = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
 
         if (obj == null)
         {
+            RestoreDetetcedObjectStats();
             detectedObject = null;
             return false;
         }
         else
         {
+            RestoreDetetcedObjectStats();
             detectedObject = obj.gameObject;
+            TrackDetetcedObjectStats();
+
             return true;
         }
     }
@@ -115,6 +155,52 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
+    public void RestoreGrabbedObjectStats(Interactable item)
+    {
+        //set the y position to its origin
+        if (useIsometricYasZ)
+        {
+            grabbedObject.transform.position =
+                new Vector3(grabbedObject.transform.position.x, grabbedObject.transform.position.y, grabbedObjectZValue);
+        }
+        else
+        {
+            grabbedObject.transform.position =
+                new Vector3(grabbedObject.transform.position.x, grabbedObjectYValue, grabbedObject.transform.position.z);
+        }
+
+        // Reestore sorting order
+        item.spriteRenderer.sortingLayerName = grabbedOriginalLayer;
+        item.spriteRenderer.sortingOrder = grabbedOriginalOrder;
+
+        // Re-enable collider
+        item.col.enabled = true;
+    }
+
+    public void TrackGrabbedObjectStats(Interactable item)
+    {
+        if (detectedObject != null)
+        {
+            grabbedObjectYValue = grabbedObject.transform.position.y;
+            grabbedObjectZValue = grabbedObject.transform.position.z;
+            grabbedOriginalLayer = item.spriteRenderer.sortingLayerName;
+            grabbedOriginalOrder = item.spriteRenderer.sortingOrder;
+
+            // Apply changes
+            grabbedObject.transform.localPosition = grabPoint.localPosition;
+            item.spriteRenderer.sortingLayerName = grabbedDesiredLayer;
+            item.spriteRenderer.sortingOrder = grabbedDesiredOrder;
+
+            // Disable collider
+            item.col.enabled = false;
+
+            if (grabbedObject == detectedObject)
+            {
+                RestoreDetetcedObjectStats();
+            }
+        }
+    }
+
     public void GrabDrop(Interactable item)
     {
         //Check if we do have a grabbed object => drop it
@@ -124,26 +210,8 @@ public class InteractionSystem : MonoBehaviour
             isGrabbing = false;
             //unparent the grabbed object
             grabbedObject.transform.parent = null;
-            //set the y position to its origin
 
-            if (useIsometricYasZ)
-            {
-                grabbedObject.transform.position =
-                    new Vector3(grabbedObject.transform.position.x, grabbedObject.transform.position.y, grabbedObjectZValue);
-            }
-            else
-            {
-                grabbedObject.transform.position =
-                    new Vector3(grabbedObject.transform.position.x, grabbedObjectYValue, grabbedObject.transform.position.z);
-            }
-
-            // Reestore sorting order
-
-            item.spriteRenderer.sortingLayerName = grabbedOriginalLayer;
-            item.spriteRenderer.sortingOrder = grabbedOriginalOrder;
-
-            // Re-enable collider
-            item.col.enabled = true;
+            RestoreGrabbedObjectStats(item);
 
             //null the grabbed object reference
             grabbedObject = null;
@@ -164,18 +232,7 @@ public class InteractionSystem : MonoBehaviour
             grabbedObject = detectedObject;
             grabbedObject.transform.parent = transform;
 
-            grabbedObjectYValue = grabbedObject.transform.position.y;
-            grabbedObjectZValue = grabbedObject.transform.position.z;
-            grabbedOriginalLayer = item.spriteRenderer.sortingLayerName;
-            grabbedOriginalOrder = item.spriteRenderer.sortingOrder;
-
-            item.spriteRenderer.sortingLayerName = grabbedDesiredLayer;
-            item.spriteRenderer.sortingOrder = grabbedDesiredOrder;
-
-            grabbedObject.transform.localPosition = grabPoint.localPosition;
-
-            // Disable collider
-            item.col.enabled = false;
+            TrackGrabbedObjectStats(item);
 
             // Change music to sock
             AudioManager.ChangeMusicCaller("SockTheme");
