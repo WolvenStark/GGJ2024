@@ -235,8 +235,25 @@ public class InteractionSystem : MonoBehaviour
             TrackGrabbedObjectStats(item);
 
             // Change music to sock
-            AudioManager.ChangeMusicCaller(item.musicInteract);
-            AudioManager.PlaySFX(item.sfxInteract);
+            if (item.musicInteract != string.Empty && item.musicInteract != "" && item.musicInteract != "null")
+            {
+                AudioManager.ChangeMusicCaller(item.musicInteract);
+            }
+            if (item.sfxInteract != string.Empty && item.sfxInteract != "" && item.musicInteract != "null")
+            {
+                AudioManager.PlaySFX(item.sfxInteract);
+            }
+            if (item.pointsValue != 0)
+            {
+                if (item.pointsValue > 0)
+                {
+                    ProgressBar.Instance.IncrementProgress(item.pointsValue);
+                }
+                else
+                {
+                    ProgressBar.Instance.DecrementProgress(item.pointsValue);
+                }
+            }
         }
     }
 

@@ -31,6 +31,7 @@ public class Interactable : MonoBehaviour
 
     public string sfxInteract = "ScoreUp";
     public string musicInteract = "MainTheme";
+    public float pointsValue = 0.1f;
 
     private void Awake()
     {

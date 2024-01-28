@@ -4911,7 +4911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   incrementSound: {fileID: 8300000, guid: 39b8ae8ceba74504ea106f988ab4fb9a, type: 3}
   decrementSound: {fileID: 8300000, guid: 50faf285b17b0da449544e480a29c768, type: 3}
-  startingProgress: 0.75
+  startingProgress: 0
   targetProgress: 0
   maxFillSpeed: 0.2
   errorAllowance: 0.01

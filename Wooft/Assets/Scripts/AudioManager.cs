@@ -324,6 +324,9 @@ public class AudioManager : MonoBehaviour
 
     public static void RestoreMainTheme()
     {
-        ChangeMusicCaller(mainThemeTrack);
+        if (currentTheme != mainThemeTrack)
+        {
+            ChangeMusicCaller(mainThemeTrack);
+        }
     }
 }

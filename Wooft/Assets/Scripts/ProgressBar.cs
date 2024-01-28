@@ -7,6 +7,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class ProgressBar : MonoBehaviour
 {
+    public static ProgressBar Instance;
+
     protected Slider progress;
     protected ParticleSystem particleEffect;
     protected AudioSource source = null;
@@ -15,15 +17,26 @@ public class ProgressBar : MonoBehaviour
 
     public float startingProgress = 0.75f;
     public float targetProgress = 0.0f;
-    public float maxFillSpeed = 0.4f;
+    public float currentFillSpeed = 0.4f;
+    public const float maxFillSpeed = 0.4f;
     public float errorAllowance = 0.01f;
 
     public void Awake()
     {
-        source = gameObject.AddComponent<AudioSource>();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
 
-        progress = GetComponent<Slider>();
-        particleEffect = progress.GetComponentInChildren<ParticleSystem>();
+            source = gameObject.AddComponent<AudioSource>();
+
+            progress = GetComponent<Slider>();
+            particleEffect = progress.GetComponentInChildren<ParticleSystem>();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Start()
@@ -36,7 +49,7 @@ public class ProgressBar : MonoBehaviour
         if (progress.value < targetProgress)
         {
             //var step = Mathf.Clamp((targetProgress - progress.value), 0, maxFillSpeed);
-            progress.value += maxFillSpeed * Time.deltaTime;
+            progress.value += currentFillSpeed * Time.deltaTime;
 
             if (!particleEffect.isPlaying)
             {
@@ -58,19 +71,18 @@ public class ProgressBar : MonoBehaviour
 
     }
 
-    public void IncrementProgress(float newProgress)
+    public void IncrementProgress(float newProgress, float speed = maxFillSpeed)
     {
         targetProgress = progress.value + newProgress;
-        //targetProgress = Mathf.Clamp01(targetProgress);
+        currentFillSpeed = speed;
 
         source.PlayOneShot(incrementSound);
     }
 
-    public void DecrementProgress(float newProgress)
+    public void DecrementProgress(float newProgress, float speed = maxFillSpeed)
     {
         targetProgress = progress.value - newProgress;
-        //targetProgress = Mathf.Clamp01(targetProgress, progress.minValue, progress.maxValue);
-
+        currentFillSpeed = speed;
         source.PlayOneShot(decrementSound);
     }
 }
