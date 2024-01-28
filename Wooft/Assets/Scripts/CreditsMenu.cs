@@ -61,20 +61,20 @@ public class CreditsMenu : MonoBehaviour
                 if (lastMusicTrack == menuThemeTrack)
                 {
                     lastMusicTrack = AudioManager.mainThemeTrack;
-                    Debug.Log("Override intiial music to " + lastMusicTrack);
+                    //Debug.Log("Override intiial music to " + lastMusicTrack);
                 }
 
                 AudioManager.StopAllMusic();
 
                 if (hasPlayedIntro)
                 {
-                    Debug.Log("Play as is " + lastMusicTrack);
+                    //Debug.Log("Play as is " + lastMusicTrack);
 
                     AudioManager.ChangeMusicCaller(lastMusicTrack);
                 }
                 else
                 {
-                    Debug.Log("Play with intro " + lastMusicTrack);
+                    //Debug.Log("Play with intro " + lastMusicTrack);
 
                     AudioManager.PlayMusicIntro(lastMusicTrack);
                     AudioManager.ChangeMusicCaller(lastMusicTrack);

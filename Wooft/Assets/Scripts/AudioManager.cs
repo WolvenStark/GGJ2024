@@ -82,11 +82,6 @@ public class AudioManager : MonoBehaviour
         musicSource.playOnAwake = false;
     }
 
-    protected void Start()
-    {
-        //PlayMusicIntro("MainTheme");
-    }
-
     public static void StopAllMusic()
     {
         musicSource.Stop();
