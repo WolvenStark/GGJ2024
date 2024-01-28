@@ -227,6 +227,7 @@ public class InteractionSystem : MonoBehaviour
     {
         if (detectedObject != null)
         {
+            grabbedObject.transform.parent = transform;
             grabbedObjectYValue = grabbedObject.transform.position.y;
             grabbedObjectZValue = grabbedObject.transform.position.z;
             grabbedOriginalLayer = item.spriteRenderer.sortingLayerName;
@@ -236,6 +237,7 @@ public class InteractionSystem : MonoBehaviour
             grabbedObject.transform.localPosition = grabPoint.localPosition;
             item.spriteRenderer.sortingLayerName = grabbedDesiredLayer;
             item.spriteRenderer.sortingOrder = grabbedDesiredOrder;
+            grabbedObject.transform.parent = grabPoint;
 
             // Disable collider
             item.col.enabled = false;
@@ -277,7 +279,6 @@ public class InteractionSystem : MonoBehaviour
             //Cache the y value of the object
             //Adjust the position of the grabbed object to be closer to hands                        
             grabbedObject = detectedObject;
-            grabbedObject.transform.parent = transform;
 
             TrackGrabbedObjectStats(item);
 
