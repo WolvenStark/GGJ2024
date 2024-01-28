@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
     public static AudioSource sfxSource = null;
     public static AudioSource musicSource = null;
 
-    public static string currentTheme = null;
 
     public static float musicIntroClipLength = 0.0f;
     public static float musicClipLength = 0.0f;
@@ -26,7 +25,8 @@ public class AudioManager : MonoBehaviour
     private static bool keepFadingOutMusic = false;
     private static bool keepFadingOutMusicIntro = false;
 
-    private static string mainThemeTrack = "MainTheme";
+    public static string currentTheme = "MainTheme";
+    public static string mainThemeTrack = "MainTheme";
 
     private void Awake()
     {
@@ -84,8 +84,18 @@ public class AudioManager : MonoBehaviour
 
     protected void Start()
     {
-        PlaySFX("WipGood");
-        PlayMusicIntro("MainTheme");
+        //PlayMusicIntro("MainTheme");
+    }
+
+    public static void StopAllMusic()
+    {
+        musicSource.Stop();
+        musicIntroSource.Stop();
+
+        keepFadingInMusic = false;
+        keepFadingInMusicIntro = false;
+        keepFadingOutMusic = false;
+        keepFadingOutMusicIntro = false;
     }
 
     public static void PlayMusicIntro(string trackName)
