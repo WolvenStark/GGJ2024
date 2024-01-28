@@ -12,9 +12,9 @@ public class CameraZoom : MonoBehaviour
     public float zoomInSize;
     [Range(0.01f, 2.0f)]
     public float zoomOutSize;
-    [Range(0.01f, 0.1f)]
+    [Range(0.001f, 0.1f)]
     public float zoomInSpeed;
-    [Range(0.01f, 0.1f)]
+    [Range(0.001f, 0.1f)]
     public float zoomOutSpeed;
     [Range(1, 3)]
     public float waitTime;

@@ -2234,6 +2234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2259623672081088131, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2259623672081088156, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2416,6 +2420,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519420035, guid: 5dc02384d68526843b50e89129519bce, type: 3}
+      propertyPath: zoomInSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4184914490445378638, guid: 5dc02384d68526843b50e89129519bce, type: 3}
       propertyPath: m_Name
       value: Main Camera
