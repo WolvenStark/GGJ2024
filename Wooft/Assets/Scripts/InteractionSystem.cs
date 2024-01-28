@@ -29,6 +29,11 @@ public class InteractionSystem : MonoBehaviour
     public bool isGrabbing;
     public bool useIsometricYasZ = true;
 
+    protected string grabbedDesiredLayer = "Interactable";
+    protected int grabbedDesiredOrder = 3;
+    protected string grabbedOriginalLayer = "Default";
+    protected int grabbedOriginalOrder = 1;
+
     private void Awake()
     {
         if (Instance == null)
@@ -51,7 +56,7 @@ public class InteractionSystem : MonoBehaviour
                 //If we are grabbing something don't interact with other items, drop the grabbed item first
                 if (isGrabbing)
                 {
-                    GrabDrop();
+                    GrabDrop(grabbedObject.GetComponentInChildren<Interactable>());
                     return;
                 }
 
@@ -110,7 +115,7 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    public void GrabDrop()
+    public void GrabDrop(Interactable item)
     {
         //Check if we do have a grabbed object => drop it
         if (isGrabbing)
@@ -132,6 +137,13 @@ public class InteractionSystem : MonoBehaviour
                     new Vector3(grabbedObject.transform.position.x, grabbedObjectYValue, grabbedObject.transform.position.z);
             }
 
+            // Reestore sorting order
+
+            item.spriteRenderer.sortingLayerName = grabbedOriginalLayer;
+            item.spriteRenderer.sortingOrder = grabbedOriginalOrder;
+
+            // Re-enable collider
+            item.col.enabled = true;
 
             //null the grabbed object reference
             grabbedObject = null;
@@ -154,8 +166,16 @@ public class InteractionSystem : MonoBehaviour
 
             grabbedObjectYValue = grabbedObject.transform.position.y;
             grabbedObjectZValue = grabbedObject.transform.position.z;
+            grabbedOriginalLayer = item.spriteRenderer.sortingLayerName;
+            grabbedOriginalOrder = item.spriteRenderer.sortingOrder;
+
+            item.spriteRenderer.sortingLayerName = grabbedDesiredLayer;
+            item.spriteRenderer.sortingOrder = grabbedDesiredOrder;
 
             grabbedObject.transform.localPosition = grabPoint.localPosition;
+
+            // Disable collider
+            item.col.enabled = false;
 
             // Change music to sock
             AudioManager.ChangeMusicCaller("SockTheme");

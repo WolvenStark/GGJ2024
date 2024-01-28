@@ -24,12 +24,14 @@ public class Interactable : MonoBehaviour
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
+    public Collider2D col;
 
     private int targetLayer = 6; // Interactable
 
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        col = gameObject.transform.GetChild(0).gameObject.GetComponent<Collider2D>();
     }   
 
     private void Reset()
@@ -49,10 +51,10 @@ public class Interactable : MonoBehaviour
                 InteractionSystem.Instance.ExamineItem(this);
                 break;
             case InteractionType.GrabDrop:
-                InteractionSystem.Instance.GrabDrop();
+                InteractionSystem.Instance.GrabDrop(this);
                 break;
             case InteractionType.Consume:
-                InteractionSystem.Instance.GrabDrop();
+                InteractionSystem.Instance.GrabDrop(this);
                 gameObject.SetActive(false);
                 break;
             default:
