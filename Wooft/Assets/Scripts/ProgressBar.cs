@@ -28,7 +28,10 @@ public class ProgressBar : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            source = gameObject.AddComponent<AudioSource>();
+            if (source == null)
+            {
+                source = gameObject.AddComponent<AudioSource>();
+            }
 
             progress = GetComponent<Slider>();
             particleEffect = progress.GetComponentInChildren<ParticleSystem>();
@@ -37,6 +40,11 @@ public class ProgressBar : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Reset()
+    {
+        source.playOnAwake = false;
     }
 
     public void Start()

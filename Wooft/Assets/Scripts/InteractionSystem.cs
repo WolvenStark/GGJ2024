@@ -170,16 +170,28 @@ public class InteractionSystem : MonoBehaviour
 
             examinedObject = item.gameObject;
 
-            ApplyItemStats(item);
+            ApplyItemStats(item, false);
 
             Instance.StopAllCoroutines();
-            Instance.StartCoroutine(WaitForMirrorToEnd());
+            Instance.StartCoroutine(WaitForMirrorToEnd(item));
         }
     }
 
-    public IEnumerator WaitForMirrorToEnd()
+    public IEnumerator WaitForMirrorToEnd(Interactable item)
     {
         yield return new WaitForSeconds(6.5f);
+
+        int wonMirror = Random.Range(0, 2);
+
+        // Award EXTRA points for finishing the stare
+        if (wonMirror > 0)
+        {
+            ProgressBar.Instance.IncrementProgress(item.pointsValue * 3);
+        }
+        else
+        {
+            ProgressBar.Instance.DecrementProgress(item.pointsValue * 3);
+        }
 
         // Return item
         Instance.ExamineItem(examinedObject.GetComponentInChildren<Interactable>());
@@ -268,7 +280,7 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    public void ApplyItemStats(Interactable item)
+    public void ApplyItemStats(Interactable item, bool applyPoints = true)
     {
         if (item.musicInteract != string.Empty && item.musicInteract != "" && item.musicInteract != "null")
         {
@@ -278,7 +290,7 @@ public class InteractionSystem : MonoBehaviour
         {
             AudioManager.PlaySFX(item.sfxInteract);
         }
-        if (item.pointsValue != 0)
+        if (applyPoints && item.pointsValue != 0)
         {
             if (item.pointsValue > 0)
             {
