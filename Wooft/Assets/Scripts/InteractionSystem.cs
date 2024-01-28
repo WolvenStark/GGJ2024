@@ -135,6 +135,10 @@ public class InteractionSystem : MonoBehaviour
 
             //null the grabbed object reference
             grabbedObject = null;
+
+            // Return music to normal
+            AudioManager.ChangeMusicCaller("MainTheme");
+
         }
         //Check if we have nothing grabbed grab the detected item
         else
@@ -152,6 +156,9 @@ public class InteractionSystem : MonoBehaviour
             grabbedObjectZValue = grabbedObject.transform.position.z;
 
             grabbedObject.transform.localPosition = grabPoint.localPosition;
+
+            // Change music to sock
+            AudioManager.ChangeMusicCaller("SockTheme");
         }
     }
 

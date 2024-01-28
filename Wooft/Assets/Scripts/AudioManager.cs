@@ -18,10 +18,13 @@ public class AudioManager : MonoBehaviour
     public static float musicClipLength = 0.0f;
     public static float musicMinVolume = 0.0f;
     public static float musicMaxVolume = 1.0f;
-    public static float musicClipFadeInLength = 0.05f;
+    public static float musicClipFadeInDuration = 0.05f;
+    public static float musicClipSwapTracksDuration = 0.5f;
 
-    private static bool keepFadingIn = false;
-    private static bool keepFadingOut = false;
+    private static bool keepFadingInMusic = false;
+    private static bool keepFadingInMusicIntro = false;
+    private static bool keepFadingOutMusic = false;
+    private static bool keepFadingOutMusicIntro = false;
 
     private void Awake()
     {
@@ -181,13 +184,13 @@ public class AudioManager : MonoBehaviour
 
     public static IEnumerator FadeInMusic(string trackName, float speed, float maxVolume)
     {
-        keepFadingIn = true;
-        keepFadingOut = false;
+        keepFadingInMusic = true;
+        keepFadingOutMusic = false;
 
         musicSource.volume = 0;
         float audioVolume = musicSource.volume;
 
-        while (keepFadingIn && musicSource.volume < maxVolume)
+        while (keepFadingInMusic && musicSource.volume < maxVolume)
         {
             audioVolume += speed;
             musicSource.volume = audioVolume;
@@ -199,12 +202,12 @@ public class AudioManager : MonoBehaviour
 
     public static IEnumerator FadeOutMusic(string trackName, float speed, float minVolume)
     {
-        keepFadingIn = false;
-        keepFadingOut = true;
+        keepFadingInMusic = false;
+        keepFadingOutMusic = true;
 
         float audioVolume = musicSource.volume;
 
-        while (keepFadingOut && musicSource.volume > minVolume)
+        while (keepFadingOutMusic && musicSource.volume > minVolume)
         {
             audioVolume -= speed;
             musicSource.volume = audioVolume;
@@ -214,12 +217,95 @@ public class AudioManager : MonoBehaviour
         musicSource.volume = minVolume;
     }
 
-    public static void FadeInCaller(string trackName, float speed, float maxVolume)
+    public static IEnumerator FadeInMusicIntro(string trackName, float speed, float maxVolume)
+    {
+        keepFadingInMusicIntro = true;
+        keepFadingOutMusicIntro = false;
+
+        musicIntroSource.volume = 0;
+        float audioVolume = musicIntroSource.volume;
+
+        while (keepFadingInMusicIntro && musicIntroSource.volume < maxVolume)
+        {
+            audioVolume += speed;
+            musicIntroSource.volume = audioVolume;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        musicIntroSource.volume = maxVolume;
+    }
+
+    public static IEnumerator FadeOutMusicIntro(string trackName, float speed, float minVolume)
+    {
+        keepFadingInMusicIntro = false;
+        keepFadingOutMusicIntro = true;
+
+        float audioVolume = musicIntroSource.volume;
+
+        while (keepFadingOutMusicIntro && musicIntroSource.volume > minVolume)
+        {
+            audioVolume -= speed;
+            musicIntroSource.volume = audioVolume;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        musicIntroSource.volume = minVolume;
+    }
+
+
+    public static IEnumerator ChangeMusic(string trackName, float speed)
+    {
+        FadeOutMusicCaller(trackName, speed, musicMinVolume);
+        FadeOutMusicIntroCaller(trackName, speed, musicMinVolume);
+
+        Debug.LogWarning("ChangeMusic " + trackName);
+
+        Sound s = Array.Find(Instance.musicSounds, sound => sound.name == trackName);
+        Assert.IsNotNull(s, "Music " + trackName + " not found");
+
+        Debug.LogWarning("Change Music - Begin Waiting " + trackName);
+        while (musicSource.volume > speed)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        // Stop the music
+        musicSource.Stop();
+        Debug.LogWarning("Change Music - Finished Waiting " + trackName);
+
+        if (s != null && !musicSource.isPlaying)
+        {
+            // Assign new music clip
+            musicSource.clip = s.clip;
+
+            musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
+            musicClipLength = musicSource.clip.length;
+            currentTheme = trackName;
+
+            if (musicSource.loop)
+            {
+                FadeInMusicCaller(trackName, speed, musicMaxVolume);
+                LoopMusicCaller(trackName, musicClipLength, false);
+            }
+        }
+    }
+
+    public static void FadeInMusicIntroCaller(string trackName, float speed, float maxVolume)
+    {
+        Instance.StartCoroutine(FadeInMusicIntro(trackName, speed, maxVolume));
+    }
+
+    public static void FadeOutMusicIntroCaller(string trackName, float speed, float minVolume)
+    {
+        Instance.StartCoroutine(FadeOutMusicIntro(trackName, speed, minVolume));
+    }
+
+    public static void FadeInMusicCaller(string trackName, float speed, float maxVolume)
     {
         Instance.StartCoroutine(FadeInMusic(trackName, speed, maxVolume));
     }
 
-    public static void FadeOutCaller(string trackName, float speed, float minVolume)
+    public static void FadeOutMusicCaller(string trackName, float speed, float minVolume)
     {
         Instance.StartCoroutine(FadeOutMusic(trackName, speed, minVolume));
     }
@@ -227,5 +313,10 @@ public class AudioManager : MonoBehaviour
     public static void LoopMusicCaller(string trackName, float clipLength, bool fadeIn)
     {
         Instance.StartCoroutine(LoopMusic(trackName, clipLength, fadeIn));
+    }
+
+    public static void ChangeMusicCaller(string trackName)
+    {
+        Instance.StartCoroutine(ChangeMusic(trackName, musicClipSwapTracksDuration));
     }
 }
