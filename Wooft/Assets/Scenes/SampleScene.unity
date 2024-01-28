@@ -1638,7 +1638,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3154939168851167365, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
       propertyPath: m_Name
-      value: BackgroundMusicCtrl
+      value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 3154939168851167367, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
       propertyPath: m_RootOrder
