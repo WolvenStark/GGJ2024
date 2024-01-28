@@ -42,4 +42,17 @@ public class PlayerMovement : MonoBehaviour
     {
         lastInteraction = null;
     }
+
+    public void Update()
+    {
+        if (QuitGameInput())
+        {
+            Application.Quit();
+        }
+    }
+
+    public bool QuitGameInput()
+    {
+        return Input.GetKeyDown(KeyCode.Escape);
+    }
 }
