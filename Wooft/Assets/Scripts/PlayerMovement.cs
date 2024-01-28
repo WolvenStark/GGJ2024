@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     public Rigidbody2D rb;
     protected PlayerAnimation playerAnimation;
     protected float moveH, moveV;
@@ -12,11 +14,22 @@ public class PlayerMovement : MonoBehaviour
     protected float moveSpeed = 1.0f;
 
     protected Interactable lastInteraction = null;
+    public static bool AllowGameInput = false;
 
-    private void Awake()
+    public void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerAnimation = FindObjectOfType<PlayerAnimation>();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            rb = GetComponent<Rigidbody2D>();
+            playerAnimation = FindObjectOfType<PlayerAnimation>();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected void FixedUpdate()

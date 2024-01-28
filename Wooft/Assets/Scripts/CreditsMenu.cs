@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CreditsMenu : MonoBehaviour
 {
+    public static CreditsMenu Instance;
+
     public bool showCreditsToggle = true;
     protected GameObject UIObject;
 
@@ -13,7 +15,17 @@ public class CreditsMenu : MonoBehaviour
 
     public void Awake()
     {
-        UIObject = gameObject.transform.GetChild(1).gameObject;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            UIObject = gameObject.transform.GetChild(1).gameObject;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected void Start()
@@ -83,5 +95,8 @@ public class CreditsMenu : MonoBehaviour
                 }
             }
         }
+
+        // Don't allow game input whilst the screen is covered by the credits
+        PlayerMovement.AllowGameInput = !showCreditsToggle;
     }
 }

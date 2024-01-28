@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,12 +20,13 @@ public class InteractionSystem : MonoBehaviour
     [Header("Examine Fields")]
     //Examine window object
     public GameObject examineWindow;
+    public GameObject examinedObject;
     public GameObject grabbedObject;
     public float grabbedObjectYValue;
     public float grabbedObjectZValue;
     public Transform grabPoint;
     public Image examineImage;
-    public Text examineText;
+    public TextMeshProUGUI examineText;
     public bool isExamining;
     public bool isGrabbing;
     public bool useIsometricYasZ = true;
@@ -56,6 +58,9 @@ public class InteractionSystem : MonoBehaviour
         {
             if (InteractInput())
             {
+                // Cleanup previous cooroutine
+                Instance.StopAllCoroutines();
+
                 //If we are grabbing something don't interact with other items, drop the grabbed item first
                 if (isGrabbing)
                 {
@@ -76,7 +81,12 @@ public class InteractionSystem : MonoBehaviour
 
     public bool InteractInput()
     {
-        return Input.GetKeyDown(KeyCode.E);
+        if (PlayerMovement.AllowGameInput)
+        {
+            return Input.GetKeyDown(KeyCode.E);
+        }
+
+        return false;
     }
 
     public void RestoreDetetcedObjectStats()
@@ -137,11 +147,16 @@ public class InteractionSystem : MonoBehaviour
     {
         if (isExamining)
         {
+            examinedObject = null;
+
             //Hide the Examine Window
             examineWindow.SetActive(false);
             //disable the boolean
             isExamining = false;
-        }
+
+            // Return music to normal
+            AudioManager.RestoreMainTheme();
+        }   
         else
         {
             //Show the item's image in the middle
@@ -152,7 +167,22 @@ public class InteractionSystem : MonoBehaviour
             examineWindow.SetActive(true);
             //enable the boolean
             isExamining = true;
+
+            examinedObject = item.gameObject;
+
+            ApplyItemStats(item);
+
+            Instance.StopAllCoroutines();
+            Instance.StartCoroutine(WaitForMirrorToEnd());
         }
+    }
+
+    public IEnumerator WaitForMirrorToEnd()
+    {
+        yield return new WaitForSeconds(6.5f);
+
+        // Return item
+        Instance.ExamineItem(examinedObject.GetComponentInChildren<Interactable>());
     }
 
     public void RestoreGrabbedObjectStats(Interactable item)
@@ -234,25 +264,29 @@ public class InteractionSystem : MonoBehaviour
 
             TrackGrabbedObjectStats(item);
 
-            // Change music to sock
-            if (item.musicInteract != string.Empty && item.musicInteract != "" && item.musicInteract != "null")
+            ApplyItemStats(item);
+        }
+    }
+
+    public void ApplyItemStats(Interactable item)
+    {
+        if (item.musicInteract != string.Empty && item.musicInteract != "" && item.musicInteract != "null")
+        {
+            AudioManager.ChangeMusicCaller(item.musicInteract);
+        }
+        if (item.sfxInteract != string.Empty && item.sfxInteract != "" && item.sfxInteract != "null")
+        {
+            AudioManager.PlaySFX(item.sfxInteract);
+        }
+        if (item.pointsValue != 0)
+        {
+            if (item.pointsValue > 0)
             {
-                AudioManager.ChangeMusicCaller(item.musicInteract);
+                ProgressBar.Instance.IncrementProgress(item.pointsValue);
             }
-            if (item.sfxInteract != string.Empty && item.sfxInteract != "" && item.musicInteract != "null")
+            else
             {
-                AudioManager.PlaySFX(item.sfxInteract);
-            }
-            if (item.pointsValue != 0)
-            {
-                if (item.pointsValue > 0)
-                {
-                    ProgressBar.Instance.IncrementProgress(item.pointsValue);
-                }
-                else
-                {
-                    ProgressBar.Instance.DecrementProgress(item.pointsValue);
-                }
+                ProgressBar.Instance.DecrementProgress(item.pointsValue);
             }
         }
     }
