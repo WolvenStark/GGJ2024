@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1763c49ebd956014ab1ae16e40fb9453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicIntroSounds: []
+  musicIntroSounds:
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: bc7f76eb46406af4386cfcad83e64dcc, type: 3}
+  - name: SockTheme
+    clip: {fileID: 8300000, guid: c357ad1f99641d94fb0670758e49dc13, type: 3}
   sfxSounds:
   - name: WipBad
     clip: {fileID: 8300000, guid: a7a9436f2c6fec14e8bd5320fd2ba205, type: 3}
@@ -59,4 +63,5 @@ MonoBehaviour:
   musicSounds:
   - name: MainTheme
     clip: {fileID: 8300000, guid: 81d21d89501f06047bef6970d1677b28, type: 3}
-  currentTheme: 
+  - name: SockTheme
+    clip: {fileID: 8300000, guid: f9c9433e7ed45d04a8501ad13d1f4bc4, type: 3}

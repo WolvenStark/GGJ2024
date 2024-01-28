@@ -12,9 +12,16 @@ public class AudioManager : MonoBehaviour
     public static AudioSource sfxSource = null;
     public static AudioSource musicSource = null;
 
-    public string currentTheme = null;
+    public static string currentTheme = null;
 
+    public static float musicIntroClipLength = 0.0f;
     public static float musicClipLength = 0.0f;
+    public static float musicMinVolume = 0.0f;
+    public static float musicMaxVolume = 1.0f;
+    public static float musicClipFadeInLength = 0.05f;
+
+    private static bool keepFadingIn = false;
+    private static bool keepFadingOut = false;
 
     private void Awake()
     {
@@ -27,21 +34,24 @@ public class AudioManager : MonoBehaviour
 
             if (musicIntroSource == null)
             {
+                newObj = null;
                 newObj = new GameObject("musicIntroSource");
                 newObj.transform.SetParent(gameObject.transform);
                 musicIntroSource = newObj.AddComponent<AudioSource>();
             }
             if (sfxSource == null)
             {
+                newObj = null;
                 newObj = new GameObject("sfxSource");
                 newObj.transform.SetParent(gameObject.transform);
-                sfxSource = gameObject.AddComponent<AudioSource>();
+                sfxSource = newObj.AddComponent<AudioSource>();
             }
             if (musicSource == null)
             {
+                newObj = null;
                 newObj = new GameObject("musicSource");
                 newObj.transform.SetParent(gameObject.transform);
-                musicSource = gameObject.AddComponent<AudioSource>();
+                musicSource = newObj.AddComponent<AudioSource>();
             }
 
             ResetSelf();
@@ -60,32 +70,42 @@ public class AudioManager : MonoBehaviour
     protected void ResetSelf()
     {
         musicIntroSource.loop = false;
+        musicIntroSource.playOnAwake = false;
         sfxSource.loop = false;
+        sfxSource.playOnAwake = false;
         musicSource.loop = true;
+        musicSource.playOnAwake = false;
     }
 
     protected void Start()
     {
-        //PlayMusicIntro("MainTheme");
-        PlayMusic("MainTheme");
+        PlaySFX("WipGood");
+        PlayMusicIntro("MainTheme");
     }
 
-    public void PlayMusicIntro(string trackName)
+    public static void PlayMusicIntro(string trackName)
     {
+        Debug.LogWarning("PlayMusicIntro " + trackName);
+
         Sound s = Array.Find(Instance.musicIntroSounds, sound => sound.name == trackName);
 
         Assert.IsNotNull(s, "Music Intro" + trackName + " not found");
 
-        if (s != null)
+        if (s != null && !musicIntroSource.isPlaying)
         {
+            // Assign new music clip
             musicIntroSource.clip = s.clip;
-            musicIntroSource.Play();
 
+            musicIntroSource.PlayOneShot(musicIntroSource.clip, musicIntroSource.volume);
+            musicIntroClipLength = musicIntroSource.clip.length;
             currentTheme = trackName;
+
+            // Play the intro once and then loop the music
+            LoopMusicCaller(trackName, musicIntroClipLength, true);
         }
     }
 
-    public static void PlayMusic(string trackName)
+    public static void PlayMusic(string trackName, bool fadeIn)
     {
         Debug.LogWarning("PlayMusic " + trackName);
 
@@ -93,17 +113,25 @@ public class AudioManager : MonoBehaviour
 
         Assert.IsNotNull(s, "Music " + trackName + " not found");
 
-        if (s != null)
+        if (s != null && !musicSource.isPlaying)
         {
             // Assign new music clip
             musicSource.clip = s.clip;
 
             musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
             musicClipLength = musicSource.clip.length;
+            currentTheme = trackName;
 
             if (musicSource.loop)
             {
-                LoopCaller(trackName, musicClipLength);
+                if (fadeIn)
+                {
+                    LoopMusicCaller(trackName, musicClipLength, false);
+                }
+                else
+                {
+                    LoopMusicCaller(trackName, musicClipLength, false);
+                }
             }
         }
     }
@@ -142,29 +170,62 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = volume;
     }
 
-    //public void Update()
-    //{
-    //    if (!musicSource.isPlaying)
-    //    {
-    //        time = time + loopPointSeconds;
-
-    //        musicIntroSource.PlayScheduled(time);
-
-    //        nextSource = 1 - nextSource; //Switch to other AudioSource
-    //    }
-    //}
-
-    public static IEnumerator LoopMusic(string trackName, float clipLength)
+    public static IEnumerator LoopMusic(string trackName, float clipLength, bool fadeIn)
     {
         Debug.LogWarning("Loop Music - Begin Waiting " + trackName + " for " + clipLength + " seconds");
-        yield return new WaitForSeconds(clipLength);
+        yield return new WaitForSeconds(Mathf.Round(clipLength + 0.05f));
         Debug.LogWarning("Loop Music - Finished Waiting " + trackName);
 
-        PlayMusic(trackName);
+        PlayMusic(trackName, fadeIn);
     }
 
-    public static void LoopCaller(string trackName, float clipLength)
+    public static IEnumerator FadeInMusic(string trackName, float speed, float maxVolume)
     {
-        Instance.StartCoroutine(LoopMusic(trackName, clipLength));
+        keepFadingIn = true;
+        keepFadingOut = false;
+
+        musicSource.volume = 0;
+        float audioVolume = musicSource.volume;
+
+        while (keepFadingIn && musicSource.volume < maxVolume)
+        {
+            audioVolume += speed;
+            musicSource.volume = audioVolume;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        musicSource.volume = maxVolume;
+    }
+
+    public static IEnumerator FadeOutMusic(string trackName, float speed, float minVolume)
+    {
+        keepFadingIn = false;
+        keepFadingOut = true;
+
+        float audioVolume = musicSource.volume;
+
+        while (keepFadingOut && musicSource.volume > minVolume)
+        {
+            audioVolume -= speed;
+            musicSource.volume = audioVolume;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        musicSource.volume = minVolume;
+    }
+
+    public static void FadeInCaller(string trackName, float speed, float maxVolume)
+    {
+        Instance.StartCoroutine(FadeInMusic(trackName, speed, maxVolume));
+    }
+
+    public static void FadeOutCaller(string trackName, float speed, float minVolume)
+    {
+        Instance.StartCoroutine(FadeOutMusic(trackName, speed, minVolume));
+    }
+
+    public static void LoopMusicCaller(string trackName, float clipLength, bool fadeIn)
+    {
+        Instance.StartCoroutine(LoopMusic(trackName, clipLength, fadeIn));
     }
 }
