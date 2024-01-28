@@ -214,6 +214,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Interactables_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064ec10cdcef8154485b3d79fc994f1b
+      internalID: -973435738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Interactables_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 448
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e484c4d6c7411684fb89517a6ebe9b45
+      internalID: -2112129793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -226,7 +268,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Wooft_Isometric_Tiles_Interactables_3: 38854306
+      Wooft_Isometric_Tiles_Interactables_4: -973435738
       Wooft_Isometric_Tiles_Interactables_0: 1114776198
+      Wooft_Isometric_Tiles_Interactables_5: -2112129793
       Wooft_Isometric_Tiles_Interactables_1: 808846563
       Wooft_Isometric_Tiles_Interactables_2: 2036248617
   spritePackingTag: 
