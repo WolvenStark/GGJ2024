@@ -11,7 +11,13 @@ public class PlayerMovement : MonoBehaviour
     protected float moveH, moveV;
 
     [SerializeField]
-    protected float moveSpeed = 1.0f;
+    protected static float moveSpeed = 0.6f;
+    [SerializeField]
+    public static float walkSpeed = 0.6f;
+    [SerializeField]
+    public static float runSpeed = 1.0f;
+    [SerializeField]
+    public static float mirrorSpeed = 0.0f;
 
     protected Interactable lastInteraction = null;
     public static bool AllowGameInput = false;
@@ -43,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         playerAnimation.SetDirection(movement);
         rb.MovePosition(newPos);
+    }
+
+    public static void SetSpeed(float targetSpeed)
+    {
+        moveSpeed = targetSpeed;
     }
 
     public void SetAsActiveInteractable(Interactable target)

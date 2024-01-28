@@ -156,7 +156,9 @@ public class InteractionSystem : MonoBehaviour
 
             // Return music to normal
             AudioManager.RestoreMainTheme();
-        }   
+
+            PlayerMovement.SetSpeed(PlayerMovement.walkSpeed);
+        }
         else
         {
             //Show the item's image in the middle
@@ -174,6 +176,8 @@ public class InteractionSystem : MonoBehaviour
 
             Instance.StopAllCoroutines();
             Instance.StartCoroutine(WaitForMirrorToEnd(item));
+
+            PlayerMovement.SetSpeed(PlayerMovement.mirrorSpeed);
         }
     }
 
@@ -260,6 +264,7 @@ public class InteractionSystem : MonoBehaviour
 
             // Return music to normal
             AudioManager.RestoreMainTheme();
+            PlayerMovement.SetSpeed(PlayerMovement.walkSpeed);
 
         }
         //Check if we have nothing grabbed grab the detected item
@@ -277,6 +282,8 @@ public class InteractionSystem : MonoBehaviour
             TrackGrabbedObjectStats(item);
 
             ApplyItemStats(item);
+
+            PlayerMovement.SetSpeed(PlayerMovement.runSpeed);
         }
     }
 
