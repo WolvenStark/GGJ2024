@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Name
-      value: Interactable (5)
+      value: Interactable - ToyCheese
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_IsActive
@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Name
-      value: Interactable (4)
+      value: Interactable - ToyBat
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_IsActive
@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Name
-      value: Interactable (2)
+      value: Interactable - PotPlant
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_IsActive
@@ -615,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1100,7 +1100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Name
-      value: Interactable (1)
+      value: Interactable - Dogbed
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Layer
@@ -1112,7 +1112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1600,7 +1600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_Name
-      value: Interactable (3)
+      value: Interactable - Slippers
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034232, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_IsActive
@@ -1608,7 +1608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1921,7 +1921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2259623672081088157, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2259623672081088157, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2170,7 +2170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4343839000240034233, guid: bb60aaf710808ef4c91c91c2791dbc3f, type: 3}
       propertyPath: m_LocalPosition.x
