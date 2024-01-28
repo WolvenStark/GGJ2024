@@ -13,7 +13,7 @@ public class CreditsMenu : MonoBehaviour
 
     public void Awake()
     {
-        UIObject = gameObject.transform.GetChild(0).gameObject;
+        UIObject = gameObject.transform.GetChild(1).gameObject;
     }
 
     protected void Start()
