@@ -925,7 +925,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 264291586815206528, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 264291586815206528, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[2].Array.size
@@ -1017,15 +1017,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2224890308466650301, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414306888306582044, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7798595745431660245, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7798595745431660247, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_SortingOrder
@@ -3425,7 +3425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798595746895243617, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7798595746895243619, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_Mode
@@ -3437,7 +3437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798595747088325383, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7798595747366087177, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_RootOrder
@@ -3489,7 +3489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7929508243175077164, guid: 80eeb6b55e97ed044805750743f0d345, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -138,8 +138,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -174,8 +174,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -200,8 +200,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -225,8 +225,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -252,8 +252,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -280,8 +280,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -305,8 +305,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -331,8 +331,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,8 +352,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,8 +394,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -419,8 +419,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -445,8 +445,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -492,8 +492,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -501,6 +501,69 @@ TextureImporter:
       bones: []
       spriteID: bddcb8a36eaad31499a534ec3efcd17c
       internalID: 506579951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_BaseBedroom_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056e1b483ea5ae9409dfa9139928ae63
+      internalID: -1827062398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_BaseBedroom_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d64c2250c77fb4294091e95154b15c
+      internalID: -1271898314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_BaseBedroom_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91defa7f26fd7f4fbbefbde3e123039
+      internalID: -912296690
       vertices: []
       indices: 
       edges: []
@@ -519,6 +582,7 @@ TextureImporter:
       name: _NormalMap
     nameFileIdTable:
       Wooft_Isometric_Tiles_BaseBedroom_6: 1316587461
+      Wooft_Isometric_Tiles_BaseBedroom_15: -1827062398
       Wooft_Isometric_Tiles_BaseBedroom_3: 115811251
       Wooft_Isometric_Tiles_BaseBedroom_9: 1465462442
       Wooft_Isometric_Tiles_BaseBedroom_14: 506579951
@@ -529,7 +593,9 @@ TextureImporter:
       Wooft_Isometric_Tiles_BaseBedroom_11: -1991328656
       Wooft_Isometric_Tiles_BaseBedroom_0: 2040811865
       Wooft_Isometric_Tiles_BaseBedroom_2: 612911308
+      Wooft_Isometric_Tiles_BaseBedroom_17: -912296690
       Wooft_Isometric_Tiles_BaseBedroom_7: -632589884
+      Wooft_Isometric_Tiles_BaseBedroom_16: -1271898314
       Wooft_Isometric_Tiles_BaseBedroom_12: 655488120
       Wooft_Isometric_Tiles_BaseBedroom_5: -1648981189
       Wooft_Isometric_Tiles_BaseBedroom_13: 956969236
