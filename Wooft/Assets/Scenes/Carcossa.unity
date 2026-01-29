@@ -228,8 +228,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294439919
+  m_fontColor: {r: 0.93725497, g: 0.95294124, b: 0.9686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -369,8 +369,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294439919
+  m_fontColor: {r: 0.93725497, g: 0.95294124, b: 0.9686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 925188861}
   - component: {fileID: 925188860}
   m_Layer: 0
-  m_Name: Control - Interact (1)
+  m_Name: Control - Interact Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,8 +1003,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293354943
-  m_fontColor: {r: 0.748498, g: 0.3979047, b: 0.9056604, a: 1}
+    rgba: 4290299614
+  m_fontColor: {r: 0.8705883, g: 0.77647066, b: 0.72156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 967665835}
   - component: {fileID: 967665834}
   m_Layer: 0
-  m_Name: Control - QUIT (1)
+  m_Name: Control - QUIT Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293354943
-  m_fontColor: {r: 0.748498, g: 0.3979047, b: 0.9056604, a: 1}
+    rgba: 4290299614
+  m_fontColor: {r: 0.8705883, g: 0.77647066, b: 0.72156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 1095576158}
   - component: {fileID: 1095576157}
   m_Layer: 0
-  m_Name: Control - Credits
+  m_Name: Control - Toggle Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1272,7 +1272,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1153242566}
   m_Father: {fileID: 1294498502}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1310,8 +1311,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294439919
+  m_fontColor: {r: 0.93725497, g: 0.95294124, b: 0.9686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1390,7 +1391,7 @@ GameObject:
   - component: {fileID: 1153242568}
   - component: {fileID: 1153242567}
   m_Layer: 0
-  m_Name: Control - Credits (1)
+  m_Name: Control - Toggle Menu Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,12 +1409,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1294498502}
+  m_Father: {fileID: 1095576156}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -136.1, y: -140}
+  m_AnchoredPosition: {x: -138.1, y: -0.000015258789}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153242567
@@ -1447,8 +1448,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293354943
-  m_fontColor: {r: 0.748498, g: 0.3979047, b: 0.9056604, a: 1}
+    rgba: 4290299614
+  m_fontColor: {r: 0.8705883, g: 0.77647066, b: 0.72156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4636,7 +4637,6 @@ RectTransform:
   - {fileID: 529709496}
   - {fileID: 463105906}
   - {fileID: 1095576156}
-  - {fileID: 1153242566}
   m_Father: {fileID: 83981815}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4665,7 +4665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controls :
+  m_text: 'SPEAKER :
 
 '
   m_isRightToLeft: 0
@@ -4676,8 +4676,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290552270
-  m_fontColor: {r: 0.80784315, g: 0.6313726, b: 0.7372549, a: 1}
+    rgba: 4291732157
+  m_fontColor: {r: 0.7411765, g: 0.63529414, b: 0.8078432, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
