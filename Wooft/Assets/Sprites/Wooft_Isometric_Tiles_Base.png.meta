@@ -138,8 +138,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -167,8 +167,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -196,8 +196,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -225,8 +225,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -254,8 +254,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -283,8 +283,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -312,8 +312,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -341,8 +341,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -370,8 +370,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -399,8 +399,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -428,8 +428,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -457,8 +457,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -486,8 +486,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -515,8 +515,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -544,8 +544,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -577,8 +577,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -610,8 +610,8 @@ TextureImporter:
         y: 128
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -639,8 +639,8 @@ TextureImporter:
         y: 128
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -668,8 +668,8 @@ TextureImporter:
         y: 128
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -697,8 +697,8 @@ TextureImporter:
         y: 128
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -730,8 +730,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -751,8 +751,8 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -793,8 +793,8 @@ TextureImporter:
         y: 96
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -822,8 +822,8 @@ TextureImporter:
         y: 96
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -851,8 +851,8 @@ TextureImporter:
         y: 64
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -880,8 +880,8 @@ TextureImporter:
         y: 64
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -909,8 +909,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -930,8 +930,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -939,6 +939,90 @@ TextureImporter:
       bones: []
       spriteID: 9c66a3bc4404c9d4db5f1dac1aae6c46
       internalID: -360272479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96cb47ee51127e4c9a93b97ff574602
+      internalID: -123982977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_30
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be9cf5c36af121408264ab5d6aeb5e4
+      internalID: 1612266470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e4ab157dd280849abf03c8720b32f9
+      internalID: -667869084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooft_Isometric_Tiles_Base_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc0809124116ea4194bd8aa2bf857f7
+      internalID: 370694920
       vertices: []
       indices: 
       edges: []
@@ -963,6 +1047,7 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base_15: 1128384843
       Wooft_Isometric_Tiles_Base_11: -1700167573
       Wooft_Isometric_Tiles_Base_5: 576417966
+      Wooft_Isometric_Tiles_Base_31: -667869084
       Wooft_Isometric_Tiles_Base_4: -1428839842
       Wooft_Isometric_Tiles_Base_6: -1440153425
       Wooft_Isometric_Tiles_Base_14: -2105685612
@@ -980,11 +1065,14 @@ TextureImporter:
       Wooft_Isometric_Tiles_Base_25: -1672899975
       Wooft_Isometric_Tiles_Base_27: 1925045687
       Wooft_Isometric_Tiles_Base_19: 686089445
+      Wooft_Isometric_Tiles_Base_30: 1612266470
+      Wooft_Isometric_Tiles_Base_32: 370694920
       Wooft_Isometric_Tiles_Base_17: 1757990277
       Wooft_Isometric_Tiles_Base_24: -1040810433
       Wooft_Isometric_Tiles_Base_0: -1149862843
       Wooft_Isometric_Tiles_Base_16: -240803189
       Wooft_Isometric_Tiles_Base_1: -1205996423
+      Wooft_Isometric_Tiles_Base_29: -123982977
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
