@@ -39,6 +39,14 @@ public class InteractionSystem : MonoBehaviour
     public Color detectedHighlightColor;
     protected Color detectedOriginalColor = Color.white;
 
+    protected List<KeyCode> DialougeControls = new List<KeyCode>
+    { 
+        KeyCode.Q, // Left
+        KeyCode.E, // Right
+    };
+
+    protected KeyCode lastKnownChoice = KeyCode.None;
+
     private void Awake()
     {
         if (Instance == null)
@@ -54,22 +62,28 @@ public class InteractionSystem : MonoBehaviour
 
     public void Update()
     {
-        if (DetectObject())
+        //if (DetectObject())
+        //{
+        //    if (InteractInput())
+        //    {
+        //        // Cleanup previous cooroutine
+        //        Instance.StopAllCoroutines();
+
+        //        //If we are grabbing something don't interact with other items, drop the grabbed item first
+        //        if (isGrabbing)
+        //        {
+        //            GrabDrop(grabbedObject.GetComponentInChildren<Interactable>());
+        //            return;
+        //        }
+
+        //        detectedObject.GetComponentInChildren<Interactable>().Interact();
+        //    }
+        //}
+
+
+        if (InteractInput(out lastKnownChoice))
         {
-            if (InteractInput())
-            {
-                // Cleanup previous cooroutine
-                Instance.StopAllCoroutines();
 
-                //If we are grabbing something don't interact with other items, drop the grabbed item first
-                if (isGrabbing)
-                {
-                    GrabDrop(grabbedObject.GetComponentInChildren<Interactable>());
-                    return;
-                }
-
-                detectedObject.GetComponentInChildren<Interactable>().Interact();
-            }
         }
     }
 
@@ -79,13 +93,24 @@ public class InteractionSystem : MonoBehaviour
         Gizmos.DrawSphere(detectionPoint.position, detectionRadius);
     }
 
-    public bool InteractInput()
+    public bool InteractInput(out KeyCode activeKeyDown)
     {
         if (PlayerMovement.AllowGameInput)
         {
-            return Input.GetKeyDown(KeyCode.E);
+            foreach (var selectedKey in DialougeControls)
+            {
+                bool isKeyDown = Input.GetKeyDown(selectedKey);
+
+                if (isKeyDown)
+                {
+                    Debug.Log($"The key {selectedKey} is down");
+                    activeKeyDown = selectedKey;
+                    return true;
+                }
+            }
         }
 
+        activeKeyDown = KeyCode.None;
         return false;
     }
 
