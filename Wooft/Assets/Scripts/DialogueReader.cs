@@ -9,15 +9,14 @@ public class DialogueReader : MonoBehaviour
 {
     public static DialogueReader Instance;
 
-    protected DialogueController.ConversationArgs currentArgs;
-
     [SerializeField] private TextAsset textFile;
 
-    // FileName -> (SectionName -> Lines)
-    public Dictionary<string, Dictionary<string, List<string>>> dialogueData
+    // File -> (SectionName -> Speaker + Lines)
+    public Dictionary<string, Dictionary<string, List<DialogueArgs>>> dialogueData
         = new();
 
     const string SECTIION_DEFAULT = "DEFAULT";
+    const string SPEAKER_DEFAULT = "NARRATOR";
 
     protected void Awake()
     {
@@ -31,7 +30,7 @@ public class DialogueReader : MonoBehaviour
             Destroy(gameObject);
         }
 
-        ParseTargetFiles();
+        ParseFiles();
     }
 
 
@@ -47,19 +46,18 @@ public class DialogueReader : MonoBehaviour
     ///You dare challenge me?
     ///Prepare yourself
     /// </summary>
-    protected void ParseTargetFiles()
+    protected void ParseFiles()
     {
         dialogueData.Clear();
 
         TextAsset[] files = Resources.LoadAll<TextAsset>("Dialogue");
 
-        // Optional: deterministic order
+        // Format: Deterministic order
         System.Array.Sort(files, (a, b) => a.name.CompareTo(b.name));
 
         foreach (TextAsset file in files)
         {
-            Dictionary<string, List<string>> sections = new();
-
+            Dictionary<string, List<DialogueArgs>> sections = new();
             string currentSection = null;
 
             // Split by line endings (Windows + Unix safe)
@@ -87,26 +85,43 @@ public class DialogueReader : MonoBehaviour
 
                     currentSection = line.Substring(1).ToUpperInvariant();
 
-                    currentSection = line.Substring(1);
-
-                    sections[currentSection] = new List<string>();
+                    sections[currentSection] = new List<DialogueArgs>();
                     continue;
                 }
 
-                // Normal line
-                if (currentSection != null)
+                if (currentSection == null)
                 {
-                    sections[currentSection].Add(line);
+                    Debug.LogWarning($"Line before section in {file.name}: {line}");
+                    continue;
                 }
-                else
-                {
-                    Debug.LogWarning(
-                        $"Line found before any section in {file.name}: {line}"
-                    );
-                }
+
+                // Speaker and line parsing
+                DialogueArgs dialogueLine = ParseDialogueLine(line, file.name);
+                sections[currentSection].Add(dialogueLine);
             }
 
             dialogueData[file.name] = sections;
         }
+    }
+
+    DialogueArgs ParseDialogueLine(string line, string fileName)
+    {
+        // Expected: [SPEAKER]: text
+        if (line.StartsWith("["))
+        {
+            int closeBracket = line.IndexOf(']');
+            int colon = line.IndexOf(':', closeBracket + 1);
+
+            if (closeBracket > 0 && colon > closeBracket)
+            {
+                string speaker = line.Substring(1, closeBracket - 1).Trim();
+                string text = line.Substring(colon + 1).Trim();
+
+                return new DialogueArgs(speaker, text);
+            }
+        }
+
+        // Fallback: narrator or untagged line
+        return new DialogueArgs(SPEAKER_DEFAULT, line);
     }
 }

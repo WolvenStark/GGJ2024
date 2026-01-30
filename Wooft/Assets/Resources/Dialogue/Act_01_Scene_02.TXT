@@ -1,6 +1,6 @@
 #INTRO
-Hello there
-Welcome, traveler
+[KING]: Welcome to my court.
+[THE STRANGER]: I came uninvited.
 
 // This is where the fun begins
 #BATTLE

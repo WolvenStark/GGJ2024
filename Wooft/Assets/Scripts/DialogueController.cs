@@ -4,6 +4,23 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
+
+
+[System.Serializable]
+public struct DialogueArgs
+{
+    public string SpeakerName;
+    public string Message;
+    public float DelayBetweenChars;
+
+    public DialogueArgs(string speaker, string text, float delay = 0.005f)
+    {
+        this.SpeakerName = speaker;
+        this.Message = text;
+        this.DelayBetweenChars = delay;
+    }
+}
+
 public class DialogueController : MonoBehaviour
 {
     public static DialogueController Instance;
@@ -11,15 +28,9 @@ public class DialogueController : MonoBehaviour
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
-    protected ConversationArgs currentArgs;
+    protected DialogueArgs currentArgs;
     protected Coroutine currentMessageRoutine;
 
-    public class ConversationArgs
-    {
-        public string SpeakerName;
-        public string DialogueMessage;
-        public float DelayBetweenChars;
-    }
 
     public void Awake()
     {
@@ -35,13 +46,13 @@ public class DialogueController : MonoBehaviour
 
     }
 
-    public void SnapConversation(ConversationArgs args)
+    public void SnapConversation(DialogueArgs args)
     {
         speakerText.text = args.SpeakerName;
-        dialogueText.text = args.DialogueMessage;
+        dialogueText.text = args.Message;
     }
 
-    public void NextDialogue(ConversationArgs args)
+    public void NextDialogue(DialogueArgs args)
     {
         SnapConversation(currentArgs);
 
@@ -55,7 +66,7 @@ public class DialogueController : MonoBehaviour
         currentMessageRoutine = StartCoroutine(ScrollConversation(args));
     }
 
-    public IEnumerator ScrollConversation(ConversationArgs args)
+    public IEnumerator ScrollConversation(DialogueArgs args)
     {
         yield return new WaitForSeconds(args.DelayBetweenChars);
 
@@ -63,7 +74,7 @@ public class DialogueController : MonoBehaviour
 
         speakerText.text = args.SpeakerName;
 
-        foreach (char c in args.DialogueMessage)
+        foreach (char c in args.Message)
         {
             currentMessage += c;
             dialogueText.text = currentMessage;
