@@ -20,7 +20,7 @@ public class CreditsMenu : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            UIObject = gameObject.transform.GetChild(1).gameObject;
+            UIObject = gameObject.transform.GetChild(0).gameObject;
         }
         else
         {

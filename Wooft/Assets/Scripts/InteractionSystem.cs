@@ -41,6 +41,7 @@ public class InteractionSystem : MonoBehaviour
 
     protected List<KeyCode> DialougeControls = new List<KeyCode>
     { 
+        KeyCode.Space, // Continue
         KeyCode.Q, // Left
         KeyCode.E, // Right
     };
