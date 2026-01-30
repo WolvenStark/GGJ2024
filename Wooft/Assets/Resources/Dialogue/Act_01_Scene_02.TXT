@@ -1,0 +1,8 @@
+#INTRO
+Hello there
+Welcome, traveler
+
+// This is where the fun begins
+#BATTLE
+You dare challenge me?
+Prepare yourself

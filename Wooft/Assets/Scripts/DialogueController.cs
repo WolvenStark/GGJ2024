@@ -20,6 +20,7 @@ public class DialogueController : MonoBehaviour
         public string DialogueMessage;
         public float DelayBetweenChars;
     }
+
     public void Awake()
     {
         if (Instance == null)
@@ -31,6 +32,7 @@ public class DialogueController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     public void SnapConversation(ConversationArgs args)
