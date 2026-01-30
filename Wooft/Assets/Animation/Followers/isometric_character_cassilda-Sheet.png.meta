@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 151244afad6bc1c41877946c998a5a87
+guid: 9b21792bbbe1ad744ae7b0bdca710fdc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: isometric_character-Sheet_0
+      name: isometric_character_cassilda-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce014805d5b556748aa7bbec8c52d6b5
-      internalID: 2137810185
+      spriteID: 6a261e49e16f779408399b54abfe3b5b
+      internalID: 1830134986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_1
+      name: isometric_character_cassilda-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19c26dd55ac396d4189f51f276e6eb11
-      internalID: 525654562
+      spriteID: aa8e6354457665240a8b83699971f25f
+      internalID: 1148413663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_2
+      name: isometric_character_cassilda-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea2f27dfc79f4dd4dbeb4a25a3790872
-      internalID: 1233199145
+      spriteID: 5765d9d91feda6b4b99697252a8234c7
+      internalID: 766648189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_3
+      name: isometric_character_cassilda-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 435530fa484461f4d8d3e1732cef2173
-      internalID: -97315317
+      spriteID: 4eb95e19a49869b4394ae2f3d1ddd012
+      internalID: -1650130356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_4
+      name: isometric_character_cassilda-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8517fa4ff5a4b246aa20849fe6e82b9
-      internalID: 373928781
+      spriteID: f116ac795d84bb24d8d7795b7c8e1543
+      internalID: 835852512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_5
+      name: isometric_character_cassilda-Sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d68212dc79ec3f641a352209869fadb2
-      internalID: -2119370605
+      spriteID: 86595f2588dfe0845b32b6312bc3b622
+      internalID: -1459403581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_6
+      name: isometric_character_cassilda-Sheet_6
       rect:
         serializedVersion: 2
         x: 384
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c22b4bf659cbe9b47b07f640513622e6
-      internalID: 2089154607
+      spriteID: b1d7d477bd4085347934d15e31e15e1e
+      internalID: -1927759404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: isometric_character-Sheet_7
+      name: isometric_character_cassilda-Sheet_7
       rect:
         serializedVersion: 2
         x: 448
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e77536222002ed42916d1e9bf90edc3
-      internalID: -140988717
+      spriteID: 56ad9059703b44146842c2a292a5dab4
+      internalID: -346228767
       vertices: []
       indices: 
       edges: []
@@ -309,14 +309,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      isometric_character-Sheet_4: 373928781
-      isometric_character-Sheet_3: -97315317
-      isometric_character-Sheet_0: 2137810185
-      isometric_character-Sheet_1: 525654562
-      isometric_character-Sheet_6: 2089154607
-      isometric_character-Sheet_5: -2119370605
-      isometric_character-Sheet_7: -140988717
-      isometric_character-Sheet_2: 1233199145
+      isometric_character_cassilda-Sheet_1: 1148413663
+      isometric_character_cassilda-Sheet_5: -1459403581
+      isometric_character_cassilda-Sheet_7: -346228767
+      isometric_character_cassilda-Sheet_6: -1927759404
+      isometric_character_cassilda-Sheet_3: -1650130356
+      isometric_character_cassilda-Sheet_4: 835852512
+      isometric_character_cassilda-Sheet_0: 1830134986
+      isometric_character_cassilda-Sheet_2: 766648189
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
