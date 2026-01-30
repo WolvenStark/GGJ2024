@@ -6654,6 +6654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Character
       objectReference: {fileID: 0}
+    - target: {fileID: 210271496733434314, guid: 413bd8bd6dbec514eb699a5720e07f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 413bd8bd6dbec514eb699a5720e07f0c, type: 3}
@@ -6665,6 +6669,64 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 529709497, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_text
+      value: 'You, sir, should unmask.
+
+        You, sir, should unmask.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 529709497, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 529709497, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_margin.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 529709497, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_margin.z
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 529709497, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294498502, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418182110, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418182110, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418182110, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010095554, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010095554, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010095554, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010095554, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010095554, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2259623672081088131, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
       propertyPath: m_Name
       value: GameUI
