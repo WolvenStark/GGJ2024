@@ -9,8 +9,6 @@ public class DialogueReader : MonoBehaviour
 {
     public static DialogueReader Instance;
 
-    [SerializeField] private TextAsset textFile;
-
     // File -> (SectionName -> Speaker + Lines)
     public Dictionary<string, Dictionary<string, List<DialogueArgs>>> dialogueData
         = new();
