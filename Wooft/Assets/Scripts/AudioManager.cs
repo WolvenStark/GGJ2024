@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -8,9 +9,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     public Sound[] musicIntroSounds, sfxSounds, musicSounds;
-    public static AudioSource musicIntroSource = null;
-    public static AudioSource sfxSource = null;
-    public static AudioSource musicSource = null;
+    public static StudioEventEmitter musicIntroSource = null;
+    public static StudioEventEmitter sfxSource = null;
+    public static StudioEventEmitter musicSource = null;
 
 
     public static float musicIntroClipLength = 0.0f;
@@ -42,21 +43,21 @@ public class AudioManager : MonoBehaviour
                 newObj = null;
                 newObj = new GameObject("musicIntroSource");
                 newObj.transform.SetParent(gameObject.transform);
-                musicIntroSource = newObj.AddComponent<AudioSource>();
+                musicIntroSource = newObj.AddComponent<StudioEventEmitter>();
             }
             if (sfxSource == null)
             {
                 newObj = null;
                 newObj = new GameObject("sfxSource");
                 newObj.transform.SetParent(gameObject.transform);
-                sfxSource = newObj.AddComponent<AudioSource>();
+                sfxSource = newObj.AddComponent<StudioEventEmitter>();
             }
             if (musicSource == null)
             {
                 newObj = null;
                 newObj = new GameObject("musicSource");
                 newObj.transform.SetParent(gameObject.transform);
-                musicSource = newObj.AddComponent<AudioSource>();
+                musicSource = newObj.AddComponent<StudioEventEmitter>();
             }
 
             ResetSelf();
@@ -74,12 +75,12 @@ public class AudioManager : MonoBehaviour
 
     protected void ResetSelf()
     {
-        musicIntroSource.loop = false;
-        musicIntroSource.playOnAwake = false;
-        sfxSource.loop = false;
-        sfxSource.playOnAwake = false;
-        musicSource.loop = true;
-        musicSource.playOnAwake = false;
+        //musicIntroSource.loop = false;
+        //musicIntroSource.playOnAwake = false;
+        //sfxSource.loop = false;
+        //sfxSource.playOnAwake = false;
+        //musicSource.loop = true;
+        //musicSource.playOnAwake = false;
     }
 
     public static void StopAllMusic()
@@ -101,18 +102,18 @@ public class AudioManager : MonoBehaviour
 
         Assert.IsNotNull(s, "Music Intro" + trackName + " not found");
 
-        if (s != null && !musicIntroSource.isPlaying)
-        {
-            // Assign new music clip
-            musicIntroSource.clip = s.clip;
+        //if (s != null && !musicIntroSource.isPlaying)
+        //{
+        //    // Assign new music clip
+        //    musicIntroSource.clip = s.clip;
 
-            musicIntroSource.PlayOneShot(musicIntroSource.clip, musicIntroSource.volume);
-            musicIntroClipLength = musicIntroSource.clip.length;
-            currentTheme = trackName;
+        //    musicIntroSource.PlayOneShot(musicIntroSource.clip, musicIntroSource.volume);
+        //    musicIntroClipLength = musicIntroSource.clip.length;
+        //    currentTheme = trackName;
 
-            // Play the intro once and then loop the music
-            LoopMusicCaller(trackName, musicIntroClipLength, true);
-        }
+        //    // Play the intro once and then loop the music
+        //    LoopMusicCaller(trackName, musicIntroClipLength, true);
+        //}
     }
 
     public static void PlayMusic(string trackName, bool fadeIn)
@@ -123,27 +124,27 @@ public class AudioManager : MonoBehaviour
 
         Assert.IsNotNull(s, "Music " + trackName + " not found");
 
-        if (s != null && !musicSource.isPlaying)
-        {
-            // Assign new music clip
-            musicSource.clip = s.clip;
+        //if (s != null && !musicSource.isPlaying)
+        //{
+        //    // Assign new music clip
+        //    musicSource.clip = s.clip;
 
-            musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
-            musicClipLength = musicSource.clip.length;
-            currentTheme = trackName;
+        //    musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
+        //    musicClipLength = musicSource.clip.length;
+        //    currentTheme = trackName;
 
-            if (musicSource.loop)
-            {
-                if (fadeIn)
-                {
-                    LoopMusicCaller(trackName, musicClipLength, false);
-                }
-                else
-                {
-                    LoopMusicCaller(trackName, musicClipLength, false);
-                }
-            }
-        }
+        //    if (musicSource.loop)
+        //    {
+        //        if (fadeIn)
+        //        {
+        //            LoopMusicCaller(trackName, musicClipLength, false);
+        //        }
+        //        else
+        //        {
+        //            LoopMusicCaller(trackName, musicClipLength, false);
+        //        }
+        //    }
+        //}
     }
 
     public static void PlaySFX(string trackName)
@@ -152,32 +153,32 @@ public class AudioManager : MonoBehaviour
 
         Assert.IsNotNull(s, "Sound " + trackName + " not found");
 
-        if (s != null)
-        {
-            sfxSource.clip = s.clip;
-            sfxSource.PlayOneShot(sfxSource.clip);
-        }
+        //if (s != null)
+        //{
+        //    sfxSource.clip = s.clip;
+        //    sfxSource.PlayOneShot(sfxSource.clip);
+        //}
     }
 
     public void ToggleMusic()
     {
-        musicIntroSource.mute = !musicIntroSource.mute;
-        musicSource.mute = !musicSource.mute;   
+        //musicIntroSource.mute = !musicIntroSource.mute;
+        //musicSource.mute = !musicSource.mute;   
     }
 
     public void ToggleSFX()
     {
-        sfxSource.mute = !sfxSource.mute;
+        //sfxSource.mute = !sfxSource.mute;
     }
 
     public void MusicVolume(float volume)
     {
-        musicIntroSource.volume = volume;
+        //musicIntroSource.volume = volume;
     }
 
     public void SFXVolume(float volume)
     {
-        sfxSource.volume = volume;
+        //sfxSource.volume = volume;
     }
 
     public static IEnumerator LoopMusic(string trackName, float clipLength, bool fadeIn)
@@ -194,17 +195,19 @@ public class AudioManager : MonoBehaviour
         keepFadingInMusic = true;
         keepFadingOutMusic = false;
 
-        musicSource.volume = 0;
-        float audioVolume = musicSource.volume;
+        yield return null;
 
-        while (keepFadingInMusic && musicSource.volume < maxVolume)
-        {
-            audioVolume += speed;
-            musicSource.volume = audioVolume;
-            yield return new WaitForSeconds(0.1f);
-        }
+        //musicSource.volume = 0;
+        //float audioVolume = musicSource.volume;
 
-        musicSource.volume = maxVolume;
+        //while (keepFadingInMusic && musicSource.volume < maxVolume)
+        //{
+        //    audioVolume += speed;
+        //    musicSource.volume = audioVolume;
+        //    yield return new WaitForSeconds(0.1f);
+        //}
+
+        //musicSource.volume = maxVolume;
     }
 
     public static IEnumerator FadeOutMusic(string trackName, float speed, float minVolume)
@@ -212,16 +215,19 @@ public class AudioManager : MonoBehaviour
         keepFadingInMusic = false;
         keepFadingOutMusic = true;
 
-        float audioVolume = musicSource.volume;
+        yield return null;
 
-        while (keepFadingOutMusic && musicSource.volume > minVolume)
-        {
-            audioVolume -= speed;
-            musicSource.volume = audioVolume;
-            yield return new WaitForSeconds(0.1f);
-        }
 
-        musicSource.volume = minVolume;
+        //float audioVolume = musicSource.volume;
+
+        //while (keepFadingOutMusic && musicSource.volume > minVolume)
+        //{
+        //    audioVolume -= speed;
+        //    musicSource.volume = audioVolume;
+        //    yield return new WaitForSeconds(0.1f);
+        //}
+
+        //musicSource.volume = minVolume;
     }
 
     public static IEnumerator FadeInMusicIntro(string trackName, float speed, float maxVolume)
@@ -229,17 +235,19 @@ public class AudioManager : MonoBehaviour
         keepFadingInMusicIntro = true;
         keepFadingOutMusicIntro = false;
 
-        musicIntroSource.volume = 0;
-        float audioVolume = musicIntroSource.volume;
+        yield return null;
 
-        while (keepFadingInMusicIntro && musicIntroSource.volume < maxVolume)
-        {
-            audioVolume += speed;
-            musicIntroSource.volume = audioVolume;
-            yield return new WaitForSeconds(0.1f);
-        }
+        //musicIntroSource.volume = 0;
+        //float audioVolume = musicIntroSource.volume;
 
-        musicIntroSource.volume = maxVolume;
+        //while (keepFadingInMusicIntro && musicIntroSource.volume < maxVolume)
+        //{
+        //    audioVolume += speed;
+        //    musicIntroSource.volume = audioVolume;
+        //    yield return new WaitForSeconds(0.1f);
+        //}
+
+        //musicIntroSource.volume = maxVolume;
     }
 
     public static IEnumerator FadeOutMusicIntro(string trackName, float speed, float minVolume)
@@ -247,16 +255,18 @@ public class AudioManager : MonoBehaviour
         keepFadingInMusicIntro = false;
         keepFadingOutMusicIntro = true;
 
-        float audioVolume = musicIntroSource.volume;
+        yield return null;
 
-        while (keepFadingOutMusicIntro && musicIntroSource.volume > minVolume)
-        {
-            audioVolume -= speed;
-            musicIntroSource.volume = audioVolume;
-            yield return new WaitForSeconds(0.1f);
-        }
+        //float audioVolume = musicIntroSource.volume;
 
-        musicIntroSource.volume = minVolume;
+        //while (keepFadingOutMusicIntro && musicIntroSource.volume > minVolume)
+        //{
+        //    audioVolume -= speed;
+        //    musicIntroSource.volume = audioVolume;
+        //    yield return new WaitForSeconds(0.1f);
+        //}
+
+        //musicIntroSource.volume = minVolume;
     }
 
 
@@ -270,31 +280,33 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(Instance.musicSounds, sound => sound.name == trackName);
         Assert.IsNotNull(s, "Music " + trackName + " not found");
 
-        //Debug.LogWarning("Change Music - Begin Waiting " + trackName);
-        while (musicSource.volume > speed)
-        {
-            yield return new WaitForSeconds(0.01f);
-        }
+        yield return null;
 
-        // Stop the music
-        musicSource.Stop();
-        //Debug.LogWarning("Change Music - Finished Waiting " + trackName);
+        ////Debug.LogWarning("Change Music - Begin Waiting " + trackName);
+        //while (musicSource.volume > speed)
+        //{
+        //    yield return new WaitForSeconds(0.01f);
+        //}
 
-        if (s != null && !musicSource.isPlaying)
-        {
-            // Assign new music clip
-            musicSource.clip = s.clip;
+        //// Stop the music
+        //musicSource.Stop();
+        ////Debug.LogWarning("Change Music - Finished Waiting " + trackName);
 
-            musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
-            musicClipLength = musicSource.clip.length;
-            currentTheme = trackName;
+        //if (s != null && !musicSource.isPlaying)
+        //{
+        //    // Assign new music clip
+        //    musicSource.clip = s.clip;
 
-            if (musicSource.loop)
-            {
-                FadeInMusicCaller(trackName, speed, musicMaxVolume);
-                LoopMusicCaller(trackName, musicClipLength, false);
-            }
-        }
+        //    musicSource.PlayOneShot(musicSource.clip, musicSource.volume);
+        //    musicClipLength = musicSource.clip.length;
+        //    currentTheme = trackName;
+
+        //    if (musicSource.loop)
+        //    {
+        //        FadeInMusicCaller(trackName, speed, musicMaxVolume);
+        //        LoopMusicCaller(trackName, musicClipLength, false);
+        //    }
+        //}
     }
 
     public static void FadeInMusicIntroCaller(string trackName, float speed, float maxVolume)

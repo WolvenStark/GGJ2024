@@ -1,17 +1,18 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(StudioEventEmitter))]
 public class ProgressBar : MonoBehaviour
 {
     public static ProgressBar Instance;
 
     protected Slider progress;
     protected ParticleSystem particleEffect;
-    protected AudioSource source = null;
+    protected StudioEventEmitter source = null;
     public AudioClip incrementSound;
     public AudioClip decrementSound;
 
