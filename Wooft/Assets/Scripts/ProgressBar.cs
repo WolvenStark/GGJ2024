@@ -31,7 +31,7 @@ public class ProgressBar : MonoBehaviour
 
             if (source == null)
             {
-                source = gameObject.AddComponent<AudioSource>();
+                source = gameObject.AddComponent<StudioEventEmitter>();
             }
 
             progress = GetComponent<Slider>();
@@ -45,7 +45,7 @@ public class ProgressBar : MonoBehaviour
 
     public void Reset()
     {
-        source.playOnAwake = false;
+        //source.playOnAwake = false;
     }
 
     public void Start()
@@ -85,13 +85,13 @@ public class ProgressBar : MonoBehaviour
         targetProgress = progress.value + newProgress;
         currentFillSpeed = speed;
 
-        source.PlayOneShot(incrementSound);
+        //source.PlayOneShot(incrementSound);
     }
 
     public void DecrementProgress(float newProgress, float speed = maxFillSpeed)
     {
         targetProgress = progress.value - newProgress;
         currentFillSpeed = speed;
-        source.PlayOneShot(decrementSound);
+        //source.PlayOneShot(decrementSound);
     }
 }
