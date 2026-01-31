@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Linq;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
@@ -11,7 +11,7 @@ public class DialogueController : MonoBehaviour
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
-    protected DialogueNode currentArgs;
+    protected DialogueNode currentNodeArgs;
     protected Coroutine currentMessageRoutine;
 
     public void Awake()
@@ -36,25 +36,16 @@ public class DialogueController : MonoBehaviour
         NextDialogue(DialogueReader.Instance.DialogueData.First().Value.First().Value[0]);
     }
 
-    public void SnapConversation(DialogueNode args)
+    // Explicit convesion
+    public void SnapConversation(DialogueNode node)
     {
-        speakerText.text = args.SpeakerName;
-        dialogueText.text = args.Message;
+        speakerText.text = node.ExtractSpeaker();
+        dialogueText.text = node.ExtractMessage();
     }
 
     public void NextDialogue(DialogueNode node)
     {
-        SnapConversation(currentArgs);
-
-        if (node is DialogueTextNode text)
-        {
-            ShowLine(text.line);
-        }
-        else if (node is DialogueChoiceNode choice)
-        {
-            ShowChoices(choice);
-            break; // wait for player input
-        }
+        SnapConversation(currentNodeArgs);
 
         if (currentMessageRoutine != null)
         {
@@ -62,8 +53,19 @@ public class DialogueController : MonoBehaviour
             currentMessageRoutine = null;
         }
 
-        currentArgs = node;
-        currentMessageRoutine = StartCoroutine(ScrollConversation(args));
+        currentNodeArgs = node;
+        currentMessageRoutine = StartCoroutine(ScrollConversation(node));
+
+
+        //if (node is DialogueTextNode text)
+        //{
+        //    ShowLine(text.line);
+        //}
+        //else if (node is DialogueChoiceNode choice)
+        //{
+        //    ShowChoices(choice);
+        //    //break; // wait for player input
+        //}
     }
 
     public IEnumerator ScrollConversation(DialogueNode args)
@@ -72,9 +74,9 @@ public class DialogueController : MonoBehaviour
 
         string currentMessage = string.Empty;
 
-        speakerText.text = args.SpeakerName;
+        speakerText.text = args.ExtractSpeaker();
 
-        foreach (char c in args.Message)
+        foreach (char c in args.ExtractMessage())
         {
             currentMessage += c;
             dialogueText.text = currentMessage;
@@ -86,55 +88,55 @@ public class DialogueController : MonoBehaviour
         currentMessageRoutine = null;
     }
 
-    void PlaySection(string file, string section)
-    {
-        var nodes =  DialogueReader.Instance.DialogueData[file][section];
+    //void PlaySection(string file, string section)
+    //{
+    //    var nodes =  DialogueReader.Instance.DialogueData[file][section];
 
-        foreach (DialogueNode node in nodes)
-        {
-            if (node is DialogueTextNode text)
-            {
-                ShowLine(text.line);
-            }
-            else if (node is DialogueChoiceNode choice)
-            {
-                ShowChoices(choice);
-                break; // wait for player input
-            }
-        }
-    }
+    //    foreach (DialogueNode node in nodes)
+    //    {
+    //        if (node is DialogueTextNode text)
+    //        {
+    //            ShowLine(text.line);
+    //        }
+    //        else if (node is DialogueChoiceNode choice)
+    //        {
+    //            ShowChoices(choice);
+    //            break; // wait for player input
+    //        }
+    //    }
+    //}
 
-    void OnChoiceSelected(string file, DialogueChoice choice)
-    {
-        PlaySection(file, choice.nextSection);
-    }
+    //void OnChoiceSelected(string file, DialogueChoice choice)
+    //{
+    //    PlaySection(file, choice.nextSection);
+    //}
 
-    void ShowLine(DialogueLine line)
-    {
-        speakerText.text = line.speaker;
-        dialogueText.text = line.text;
+    //void ShowLine(DialogueLine line)
+    //{
+    //    speakerText.text = line.speaker;
+    //    dialogueText.text = line.text;
 
-        // Hide choices if any were left
-        ClearChoices();
-    }
+    //    // Hide choices if any were left
+    //    ClearChoices();
+    //}
 
-    void ShowChoices(DialogueChoiceNode choiceNode)
-    {
-        ClearChoices();
+    //void ShowChoices(DialogueChoiceNode choiceNode)
+    //{
+    //    ClearChoices();
 
-        // Show prompt as narrator text
-        speakerText.text = "";
-        dialogueText.text = choiceNode.prompt;
+    //    // Show prompt as narrator text
+    //    speakerText.text = "";
+    //    dialogueText.text = choiceNode.prompt;
 
-        foreach (DialogueChoice choice in choiceNode.choices)
-        {
-            Button button = Instantiate(choiceButtonPrefab, choicesContainer);
-            button.GetComponentInChildren<TextMeshProUGUI>().text = choice.ChoiceMessage;
+    //    foreach (DialogueChoice choice in choiceNode.choices)
+    //    {
+    //        Button button = Instantiate(choiceButtonPrefab, choicesContainer);
+    //        button.GetComponentInChildren<TextMeshProUGUI>().text = choice.Message;
 
-            //button.onClick.AddListener(() =>
-            //{
-            //    OnChoiceSelected(choice);
-            //});
-        }
-    }
+    //        //button.onClick.AddListener(() =>
+    //        //{
+    //        //    OnChoiceSelected(choice);
+    //        //});
+    //    }
+    //}
 }

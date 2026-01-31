@@ -13,8 +13,8 @@ public class DialogueReader : MonoBehaviour
     public SortedDictionary<string, Dictionary<string, List<DialogueNode>>> DialogueData
         = new();
 
-    const string SECTIION_DEFAULT = "DEFAULT";
-    const string SPEAKER_DEFAULT = "NARRATOR";
+    public const string SECTIION_DEFAULT = "DEFAULT";
+    public const string SPEAKER_DEFAULT = "NARRATOR";
 
     protected void Awake()
     {

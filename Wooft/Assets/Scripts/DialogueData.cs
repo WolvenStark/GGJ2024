@@ -2,32 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DialogueNode { }
+public abstract class DialogueNode 
+{
+    public float DelayBetweenChars = 0.005f;
+
+    public abstract string ExtractMessage();
+    public abstract string ExtractSpeaker();
+
+}
 
 [System.Serializable]
 public struct DialogueLine
 {
     public string SpeakerName;
     public string Message;
-    public float DelayBetweenChars;
 
-    public DialogueLine(string speaker, string text, float delay = 0.005f)
+    public DialogueLine(string speaker, string text)
     {
         this.SpeakerName = speaker;
         this.Message = text;
-        this.DelayBetweenChars = delay;
     }
 }
 
 [System.Serializable]
 public struct DialogueChoice
 {
-    public string ChoiceMessage;        // What the player sees
+    public string Message;        // What the player sees
     public string nextSection;      // Section to jump to
 
     public DialogueChoice(string text, string target)
     {
-        this.ChoiceMessage = text;
+        this.Message = text;
         this.nextSection = target;
     } 
 }
@@ -40,7 +45,18 @@ public class DialogueTextNode : DialogueNode
     {
         this.line = line;
     }
+
+    public override string ExtractMessage()
+    {
+        return line.Message;
+    }
+
+    public override string ExtractSpeaker()
+    {
+        return line.SpeakerName;
+    }
 }
+
 public class DialogueChoiceNode : DialogueNode
 {
     public string prompt;
@@ -49,6 +65,22 @@ public class DialogueChoiceNode : DialogueNode
     public DialogueChoiceNode(string prompt)
     {
         this.prompt = prompt;
+    }
+    public override string ExtractMessage()
+    {
+        var message = string.Empty;
+
+        foreach (var choice in choices)
+        {
+            message += choice.Message + "\n";
+        }
+
+        return message;
+    }
+
+    public override string ExtractSpeaker()
+    {
+        return DialogueReader.SPEAKER_DEFAULT;
     }
 }
 
