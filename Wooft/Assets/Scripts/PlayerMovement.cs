@@ -22,6 +22,22 @@ public class PlayerMovement : MonoBehaviour
     protected Interactable lastInteraction = null;
     public static bool AllowGameInput = false;
 
+    public void OnEnable()
+    {
+        CreditsMenu.OnToggleUpdate += UpdateAllowMovement;
+    }
+
+    public void OnDisable()
+    {
+        CreditsMenu.OnToggleUpdate -= UpdateAllowMovement;
+    }
+
+    public void UpdateAllowMovement(bool toggle)
+    {
+        // Don't allow game input whilst the screen is covered by the credits
+        PlayerMovement.AllowGameInput = !toggle;
+    }
+
     public void Awake()
     {
         if (Instance == null)

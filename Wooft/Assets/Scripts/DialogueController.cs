@@ -27,6 +27,8 @@ public class DialogueController : MonoBehaviour
     protected string SectionDataName = string.Empty;
     protected int LineDataId = 0;
 
+    public bool isPaused = true;
+
 
     public void Awake()
     {
@@ -117,6 +119,12 @@ public class DialogueController : MonoBehaviour
 
         foreach (char c in args.ExtractMessage())
         {
+            // Wait inbetween being paused
+            while (!DialogueController.Instance.isPaused)
+            {
+                yield return null;
+            }
+
             currentMessage += c;
             dialogueText.text = currentMessage;
 

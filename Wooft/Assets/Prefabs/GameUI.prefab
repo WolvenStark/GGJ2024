@@ -56,6 +56,7 @@ MonoBehaviour:
   dialogueText: {fileID: 529709497}
   choiceButtonPrefab: {fileID: 0}
   choicesContainer: {fileID: 0}
+  isPaused: 1
 --- !u!114 &4477807149520984409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,8 +1491,8 @@ RectTransform:
   m_LocalScale: {x: 1920, y: 1080, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 353616449}
   - {fileID: 1922800954}
+  - {fileID: 353616449}
   - {fileID: 6009476869806193957}
   m_Father: {fileID: 2259623672081088157}
   m_RootOrder: -1
@@ -1514,8 +1515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showCreditsToggle: 1
-  lastMusicTrack: MainTheme
-  menuThemeTrack: Menu
 --- !u!1 &1188132041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1418182110}
-  - component: {fileID: 1418182111}
+  - component: {fileID: 7266220577363280549}
   m_Layer: 0
   m_Name: Main Speaker
   m_TagString: Untagged
@@ -1828,7 +1827,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1418182111
+--- !u!114 &7266220577363280549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1837,12 +1836,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1418182109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e4abfe7f329a354b829e343578aa381, type: 3}
+  m_Script: {fileID: 11500000, guid: 0477a44844973034885c2820442e81d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showCreditsToggle: 1
-  lastMusicTrack: MainTheme
-  menuThemeTrack: Menu
 --- !u!1 &1655262094
 GameObject:
   m_ObjectHideFlags: 0
