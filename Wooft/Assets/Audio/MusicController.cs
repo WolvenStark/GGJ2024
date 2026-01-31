@@ -1,5 +1,6 @@
 using FMOD.Studio;
 using FMODUnity;
+using System.IO;
 using UnityEngine;
 
 public class MusicController : MonoBehaviour
@@ -8,6 +9,10 @@ public class MusicController : MonoBehaviour
 
     protected EventInstance musicInstance;
     protected MusicState currentMusicState;
+
+    public const string MusicSubPath = "/Music";
+    public const string MainThemePath = "/GameMusic";
+
     public enum MusicState
     { 
         PartOnePreKing = 0,
@@ -33,8 +38,9 @@ public class MusicController : MonoBehaviour
 
     public void Start()
     {
-        musicInstance = RuntimeManager.CreateInstance("event:/Music/GameMusic");
+        musicInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + MusicSubPath + MainThemePath);
         musicInstance.start();
+        SetMusicState(MusicState.PartTwoPostKing);
     }
 
     public void OnDestroy()

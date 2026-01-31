@@ -29,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public static string currentTheme = "MainTheme";
     public static string mainThemeTrack = "MainTheme";
 
+    public const string AudioPathFormat = "event:";
+
     private void Awake()
     {
         if (Instance == null)
