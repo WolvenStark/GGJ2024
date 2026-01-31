@@ -40,7 +40,7 @@ public class MusicController : MonoBehaviour
     {
         musicInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + MusicSubPath + MainThemePath);
         musicInstance.start();
-        SetMusicState(MusicState.PartTwoPostKing);
+        //SetMusicState(MusicState.PartTwoPostKing);
     }
 
     public void OnDestroy()

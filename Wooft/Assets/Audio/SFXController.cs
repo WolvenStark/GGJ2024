@@ -33,7 +33,7 @@ public class SFXController : MonoBehaviour
     }
 
     public void Start()
-    {
+    { 
         mainSFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + SFXSubPath + ConversationPath + ConversationSFXEvent.PlayerVocalisation.ToString());
         mainUISFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + UISfxSubPath + UISFXEvent.ConfirmClick.ToString());
     }
