@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3154939168851167367}
   - component: {fileID: 763072046606398117}
+  - component: {fileID: 8938735173589973605}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &763072046606398117
 MonoBehaviour:
@@ -73,3 +74,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 32dd6a8bc29a26744a979fa24d3a714f, type: 3}
   - name: Menu
     clip: {fileID: 8300000, guid: 6c59beed48886ca4aaff33094e0d9f9c, type: 3}
+--- !u!114 &8938735173589973605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154939168851167365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e234217cf0a647489d66c145afcba7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
