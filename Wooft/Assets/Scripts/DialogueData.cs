@@ -28,12 +28,12 @@ public struct DialogueLine
 public struct DialogueChoice
 {
     public string Message;        // What the player sees
-    public string nextSection;      // Section to jump to
+    public string NextSection;      // Section to jump to
 
     public DialogueChoice(string text, string target)
     {
         this.Message = text;
-        this.nextSection = target;
+        this.NextSection = target;
     } 
 }
 

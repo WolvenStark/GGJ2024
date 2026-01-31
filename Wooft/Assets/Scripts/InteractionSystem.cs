@@ -84,7 +84,7 @@ public class InteractionSystem : MonoBehaviour
 
         if (InteractInput(out lastKnownChoice))
         {
-
+            DialogueController.Instance.SelectChoiceByKeyControl(lastKnownChoice);
         }
     }
 
