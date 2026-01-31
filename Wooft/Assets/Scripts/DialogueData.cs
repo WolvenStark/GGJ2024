@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class DialogueNode 
 {
-    public float DelayBetweenChars = 0.005f;
+    public float DelayBetweenChars = 0.05f;
 
     public abstract string ExtractMessage();
     public abstract string ExtractSpeaker();

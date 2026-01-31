@@ -6,7 +6,16 @@ public class MusicController : MonoBehaviour
 {
     public static MusicController Instance;
 
-    EventInstance musicInstance;
+    protected EventInstance musicInstance;
+    protected MusicState currentMusicState;
+    public enum MusicState
+    { 
+        PartOnePreKing = 0,
+        PartTwoPostKing,
+        ConclusionDed,
+        ConclusionMask,
+        ConclusionEscape,
+    }
 
     protected void Awake()
     {
@@ -42,6 +51,17 @@ public class MusicController : MonoBehaviour
     public void PauseMusic()
     {
         musicInstance.setPaused(true);
+    }
+
+    public void SetMusicState(MusicState state)
+    {
+        if (state == currentMusicState)
+        {
+            return;
+        }
+
+        currentMusicState = state;
+        musicInstance.setParameterByName("GameMusicController", (float)state);
     }
 
     public void SetMusicIntensity(float value = 1.0f)
