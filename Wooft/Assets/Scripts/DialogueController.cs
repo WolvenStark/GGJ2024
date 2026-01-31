@@ -45,7 +45,10 @@ public class DialogueController : MonoBehaviour
 
     public void NextDialogue(DialogueNode node)
     {
-        SnapConversation(currentNodeArgs);
+        if (currentNodeArgs != null)
+        {
+            SnapConversation(currentNodeArgs);
+        }
 
         if (currentMessageRoutine != null)
         {
@@ -55,7 +58,6 @@ public class DialogueController : MonoBehaviour
 
         currentNodeArgs = node;
         currentMessageRoutine = StartCoroutine(ScrollConversation(node));
-
 
         //if (node is DialogueTextNode text)
         //{
