@@ -5762,30 +5762,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: sfxSounds.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: musicIntroSounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: sfxSounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0a9cc1546b8d9fc49ac2775df60eb6d2, type: 3}
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: sfxSounds.Array.data[5].name
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: musicIntroSounds.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6c59beed48886ca4aaff33094e0d9f9c, type: 3}
-    - target: {fileID: 763072046606398117, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
-      propertyPath: musicIntroSounds.Array.data[3].name
-      value: Menu
-      objectReference: {fileID: 0}
     - target: {fileID: 3154939168851167365, guid: e588edfcda7fa7e48bfb00044e662bd6, type: 3}
       propertyPath: m_Name
       value: AudioManager

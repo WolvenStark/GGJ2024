@@ -1,10 +1,11 @@
 using FMOD.Studio;
 using FMODUnity;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SFXController : MonoBehaviour
 {
+    public static SFXController Instance;
+
     public const string SFXSubPath = "/SFX";
     public const string UISfxSubPath = "/UI";
 
@@ -13,6 +14,8 @@ public class SFXController : MonoBehaviour
 
     EventInstance mainSFXInstance;
     EventInstance mainUISFXInstance;
+
+    public const string pathDivider = "/";
 
     public enum ConversationSFXEvent
     {
@@ -32,10 +35,47 @@ public class SFXController : MonoBehaviour
         Transition, //Pageturn
     }
 
+    protected void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
     public void Start()
     { 
-        mainSFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + SFXSubPath + ConversationPath + ConversationSFXEvent.PlayerVocalisation.ToString());
-        mainUISFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + UISfxSubPath + UISFXEvent.ConfirmClick.ToString());
+        mainSFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + SFXSubPath + ConversationPath + pathDivider + ConversationSFXEvent.PlayerVocalisation.ToString() + " ");
+        mainUISFXInstance = RuntimeManager.CreateInstance(AudioManager.AudioPathFormat + UISfxSubPath + pathDivider + UISFXEvent.ConfirmClick.ToString());
+    }
+
+    public void PlayConversationSFX(ConversationSFXEvent option)
+    {
+        string eventPath = AudioManager.AudioPathFormat + SFXSubPath + ConversationPath + pathDivider + option.ToString();
+        if (option != ConversationSFXEvent.CourtierVocalisation)
+        {
+            eventPath += " "; // Found lingering space at end of sound
+        }
+
+        PlayOneShot(eventPath);
+    }
+
+    public void PlayMaskSFX(MaskSFXEvent option)
+    {
+        string eventPath = AudioManager.AudioPathFormat + SFXSubPath + MaskPath + pathDivider + option.ToString();
+        PlayOneShot(eventPath);
+    }
+
+    public void PlayUISFX(UISFXEvent option)
+    {
+        string eventPath = AudioManager.AudioPathFormat + UISfxSubPath + pathDivider + option.ToString();
+        PlayOneShot(eventPath);
     }
 
     public void PlayOneShot(string eventPath)

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SFXController;
 
 public class CreditsMenu : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class CreditsMenu : MonoBehaviour
     {
         if (UIObject.activeInHierarchy != showCreditsToggle)
         {
+            SFXController.Instance.PlayUISFX(UISFXEvent.ConfirmClick);
+
             UIObject.SetActive(showCreditsToggle);
         }
 
