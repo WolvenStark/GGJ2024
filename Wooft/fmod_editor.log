@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002511561C228 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000025115619C78 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,39 +22,129 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 86624
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2624
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 871040
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9088
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FEE38
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025135B1D2E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002509050AC08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_SFX_Vocalisations_Courtiers03', format=5, channels=2, frequency=48000, lengthbytes=72544, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.509521.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 871040
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9088
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002509050AC08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_SFX_Vocalisations_Courtiers01', format=5, channels=2, frequency=48000, lengthbytes=70592, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.962075.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 871040
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9088
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002509050AC08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_SFX_Vocalisations_Courtiers04', format=5, channels=2, frequency=48000, lengthbytes=68832, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.962075.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 871040
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9088
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002509050AC08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_SFX_Vocalisations_Courtiers02', format=5, channels=2, frequency=48000, lengthbytes=69408, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.349832.
+[LOG] SoundI::release                          :  (0000024F61C43A48)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Courtiers01 (00000251153CE8D8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 871040
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9088
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025135B18698
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_SFX_Vocalisations_Courtiers01', format=5, channels=2, frequency=48000, lengthbytes=70592, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.962075.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 86624
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000009D6C8FF3D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFF55BE4130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFF55BE40F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFF55BE4210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFF55BE42D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002509050BC88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='MaskForAKing_UI_Transition', format=5, channels=2, frequency=48000, lengthbytes=54944, lengthpcm=288000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.962075.
-[LOG] SoundI::release                          :  (0000024FF462BA58)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Escape72BPM_3:4 (0000024FD33CD348)
-[LOG] SoundI::release                          :  (0000024FF462A7A8)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Ded72BPM_3:4 (0000024FD33CB128)
-[LOG] SoundI::release                          :  (0000024FF462B498)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Masked72BPM_3:4 (0000024FD33C9DA8)
-[LOG] SoundI::release                          : MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000024F631EED18)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000025027A74E78)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000025102B2BED8)
-[LOG] SoundI::release                          :  (0000024FF462A918)
-[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_KingAppears (0000024FD33CA908)
-[LOG] SoundI::release                          :  (0000024FF462B1B8)
-[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Player01 (0000024FD33CAAA8)
-[LOG] SoundI::release                          :  (0000024FF462B328)
-[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Player02 (0000024FD33C9588)
 [LOG] SoundI::release                          :  (0000025000C035E8)
-[LOG] SoundI::release                          :     MaskForAKing_UI_Transition (0000024F5F7D5FE8)
-[LOG] SoundI::release                          :  (0000024FF462AA88)
-[LOG] SoundI::release                          :     MaskForAKing_UI_ConfirmCLick (0000024FD33CCCC8)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Courtiers01 (0000024F5F7D6668)
+[LOG] SoundI::release                          :  (0000024F61C43768)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Courtiers02 (00000251153CEA78)
+[LOG] SoundI::release                          :  (0000024F61C43488)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Courtiers03 (00000251153CE598)
+[LOG] SoundI::release                          :  (0000024F61C44178)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Courtiers04 (00000251153CF0F8)
+[LOG] SoundI::release                          :  (000002509077C638)
+[LOG] SoundI::release                          :     MaskForAKing_UI_Transition (00000251153CEC18)
+[LOG] SoundI::release                          :  (0000024F61C42BE8)
+[LOG] SoundI::release                          :     MaskForAKing_UI_ConfirmCLick (0000024F84BBD4E8)
+[LOG] SoundI::release                          :  (0000024F61C445C8)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Escape72BPM_3:4 (0000024F84BBD008)
+[LOG] SoundI::release                          :  (0000024F61C435F8)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Ded72BPM_3:4 (0000024F84BBCE68)
+[LOG] SoundI::release                          : MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000024F631F1238)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000025027A747F8)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic72BPM_3:4 (0000025102B2B4B8)
+[LOG] SoundI::release                          :  (0000024F61C438D8)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_Masked72BPM_3:4 (0000024F84BBD348)
+[LOG] SoundI::release                          :  (0000024F61C42D58)
+[LOG] SoundI::release                          :     MaskForAKing_Music_GameplayMusic_KingAppears (0000024F84BBD688)
+[LOG] SoundI::release                          :  (0000024F61C42A78)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Player01 (0000025090F32F68)
+[LOG] SoundI::release                          :  (0000024F61C44008)
+[LOG] SoundI::release                          :     MaskForAKing_SFX_Vocalisations_Player02 (0000025090F33788)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -65,3 +155,12 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

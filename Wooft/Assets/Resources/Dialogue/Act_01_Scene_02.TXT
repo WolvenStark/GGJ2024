@@ -1,7 +1,7 @@
 #INTRO
 [CAMILLA]:  You, sir, should unmask.
 [THE STRANGER]: Indeed?
-[CAMILLA]:  Indeed, it's time. We all have laid aside disguise but you.
+[CASSILDA]:  Indeed, it's time. We all have laid aside disguise but you.
 
 ? Will you obey?
 -> Remove it | UNMASK
