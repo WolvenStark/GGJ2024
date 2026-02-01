@@ -7,16 +7,22 @@
 -> Remove it | UNMASK
 -> Refuse | REFUSE
 
-#UNMASK | #ARRIVAL
+#UNMASK
 The court gasps as you gesture to tear an imaginary mask off your face, and toss it into the air as the others did before you.
 Only now you feel the pressure of something around your forehead, Sitting atop your ears. A flash of white in the corner of your eyes.
 ...Upon your face now rests a mask
 [THE KING]: The face is gone. Yet the void has a name, and it whispers yours.
 [THE STRANGER]: Names belong to the owned. I am nothing that can be owned.
-[THE KING]: Once you are known, do you not belong to everyone else.
+[THE KING]: Once you are known, do you not belong to everyone else?
 [THE STRANGER]: Does one ever truly know another? Would you ever want to know..Completely?
-[THE KING]: Most enjoy the blissful ignorance that comes with knowing another's mask instead of their face.
-[THE STRANGER]: All know your face, King. 
+[THE KING]: No. Most enjoy the blissful ignorance that comes with knowing another's mask instead of their face.
+[THE STRANGER]: All know your mask, King. 
+[THE KING]: Indeed, but few know my face.
+[THE STRANGER]: Dosn't that make YOU the Stranger here?
+
+? Is the king a stranger to his subjects?
+-> Yes. He must be. | KINGUNLOVED
+-> No. He is loved. | KINGLOVED
 
 #REFUSE
 [THE STRANGER]: I wear no mask.
@@ -24,7 +30,7 @@ Only now you feel the pressure of something around your forehead, Sitting atop y
 A silence follows, thick as velvet. The Stranger stands bare-faced. The courtiers recoil, then recover with practised grace.
 [THE KING]: You carry no mask. Do you believe that makes you unseen?
 [THE STRANGER]: I wished to come as I am.
-[THE KING]: And have you? The very same you were a second ago? When you first entered this court?
+[THE KING]: And are you? The very same you were a second ago? Yesterday?
 
 ? Are you the same?
 -> Of course | ALWAYSTHESAME
@@ -35,6 +41,24 @@ A silence follows, thick as velvet. The Stranger stands bare-faced. The courtier
 
 #ALWAYSTHESAME
 [THE STRANGER]: Yes. I don't know how to be anyone other than myself
+YOU HAVE REACHED THE END OF THE DEMO.
 
 #ALWAYSCHANGING
 [THE STRANGER]: I am still a stranger to you. That is enough.
+YOU HAVE REACHED THE END OF THE DEMO.
+
+#KINGUNLOVED
+[THE KING]: All know of me. Where I walk it is never as an intruder ...but as someone who has always been expected.
+[THE STRANGER]: I am always expected, until one becomes known.
+[THE KING]: Do you ever revisit a mask?
+[THE STRANGER]: No. But i often revisist a face.
+YOU HAVE REACHED THE END OF THE DEMO.
+
+#KINGLOVED
+[THE KING]: Ah. They say so. They say many things. They know the mask.
+[THE STRANGER]: Is to know not, to love? To understand? You cannot know a Stranger.
+[THE KING]: My subjects love what I spare them from: the silence behind the world, the knowledge that the mask might slip.
+[THE KING]: If they loved me, truly, they would beg me to leave.
+[THE STRANGER]: But they do not.
+[THE KING]: So I remain. And they call that love.
+YOU HAVE REACHED THE END OF THE DEMO.
