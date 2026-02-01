@@ -14,22 +14,22 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         // Find the main player and get it's transform
-        target = GameObject.FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Transform>();
+        //target = GameObject.FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Transform>();
         cam = gameObject.GetComponent<Camera>();
     }
 
-    private void LateUpdate()
-    {
-        var targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
-        Vector3 velocity = (targetPos - transform.position) * smoothSpeed;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
+    //private void LateUpdate()
+    //{
+    //    var targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
+    //    Vector3 velocity = (targetPos - transform.position) * smoothSpeed;
+    //    transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
 
-        // Clamp the position between the bounds
-        transform.position = new Vector3
-            (
-                Mathf.Clamp(transform.position.x, minX, maxX),
-                Mathf.Clamp(transform.position.y, minY, maxY),
-                transform.position.z
-            );
-    }
+    //    // Clamp the position between the bounds
+    //    transform.position = new Vector3
+    //        (
+    //            Mathf.Clamp(transform.position.x, minX, maxX),
+    //            Mathf.Clamp(transform.position.y, minY, maxY),
+    //            transform.position.z
+    //        );
+    //}
 }

@@ -54,23 +54,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    protected void FixedUpdate()
-    {
-        Vector2 currentPos = rb.position;
+    //protected void FixedUpdate()
+    //{
+    //    Vector2 currentPos = rb.position;
 
-        if (PlayerMovement.AllowGameInput)
-        {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-            inputVector = Vector2.ClampMagnitude(inputVector, 1);
-            Vector2 movement = inputVector * moveSpeed;
-            Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
-            playerAnimation.SetDirection(movement);
-            rb.MovePosition(newPos);
-        }
+    //    if (PlayerMovement.AllowGameInput)
+    //    {
+    //        float horizontalInput = Input.GetAxis("Horizontal");
+    //        float verticalInput = Input.GetAxis("Vertical");
+    //        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+    //        inputVector = Vector2.ClampMagnitude(inputVector, 1);
+    //        Vector2 movement = inputVector * moveSpeed;
+    //        Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
+    //        playerAnimation.SetDirection(movement);
+    //        rb.MovePosition(newPos);
+    //    }
 
-    }
+    //}
 
     public static void SetSpeed(float targetSpeed)
     {
