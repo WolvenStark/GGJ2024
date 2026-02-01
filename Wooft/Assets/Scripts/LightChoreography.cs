@@ -6,6 +6,8 @@ using UnityEngine.Rendering.Universal;
 
 public class LightChoreography : MonoBehaviour
 {
+    public static LightChoreography Instance;
+
     protected Light2D GlobalLight;
     protected List<Light2D> GoldenAuras = new List<Light2D>();
     protected List<Light2D> AmbientWindowLighting = new List<Light2D>();
@@ -13,7 +15,22 @@ public class LightChoreography : MonoBehaviour
     Coroutine colourShiftRoutine = null;
     public List<Color> WorldColors;
 
-    // Start is called before the first frame update
+    public float CurrentAuraIntensity = 0.0f;
+
+    protected void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
     public void Start()
     {
         for (var childId = 0; childId < transform.childCount; childId++)
@@ -39,6 +56,8 @@ public class LightChoreography : MonoBehaviour
 
     public void SetIntensityOfAuraLight(float value)
     {
+        CurrentAuraIntensity = value;
+
         foreach (var light in GoldenAuras)
         {
             light.intensity = value;
@@ -53,7 +72,7 @@ public class LightChoreography : MonoBehaviour
         }
     }
 
-    protected void SetWorldColourModeShift(int worldIndex)
+    public void SetWorldColourModeShift(int worldIndex)
     {
         if (colourShiftRoutine != null)
         {
@@ -82,6 +101,8 @@ public class LightChoreography : MonoBehaviour
 
         colourShiftRoutine = null;
     }
+
+
 
 
 
