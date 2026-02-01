@@ -5588,6 +5588,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 681063603, guid: 413bd8bd6dbec514eb699a5720e07f0c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cb121b69b8582a84e9ce81ed79b4d721, type: 2}
+    - target: {fileID: 681063603, guid: 413bd8bd6dbec514eb699a5720e07f0c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2015139539, guid: 413bd8bd6dbec514eb699a5720e07f0c, type: 3}
       propertyPath: m_Camera
       value: 
