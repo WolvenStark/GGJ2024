@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,7 +51,7 @@ public class DialogueController : MonoBehaviour
         var sectionName = startingFile.Value.First();
         SectionDataName = sectionName.Key;
 
-        var node = sectionName.Value[0];
+        var node = sectionName.Value[LineDataId];
         NextDialogue(node);
     }
 
@@ -75,35 +76,7 @@ public class DialogueController : MonoBehaviour
         SnapConversation(currentNodeArgs);
 
         currentNodeArgs = node;
-
-        //if (node is DialogueTextNode)
-        //{
-        //    if (LineDataId <= DialogueReader.Instance.DialogueData[FileDataName][SectionDataName].Count - 1)
-        //    {
-        //        // Look at next line
-        //        LineDataId++;
-        //    }
-        //    else
-        //    {
-        //        Debug.LogWarning("End of dialogue line. Where should be jump now?");
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.LogWarning("Cannot skip option");
-        //}
-
         currentMessageRoutine = StartCoroutine(ScrollConversation(node));
-
-        //if (node is DialogueTextNode text)
-        //{
-        //    ShowLine(text.line);
-        //}
-        //else if (node is DialogueChoiceNode choice)
-        //{
-        //    ShowChoices(choice);
-        //    //break; // wait for player input
-        //}
     }
 
     public IEnumerator ScrollConversation(DialogueNode args)
@@ -132,25 +105,26 @@ public class DialogueController : MonoBehaviour
         currentMessageRoutine = null;
     }
 
-    void PlaySection(string file, string section)
+    void JumpToSectionLine(string file, string section, int lineId)
     {
         // Reset LineData back to zero
-        LineDataId = 0;
+        LineDataId = lineId;
+        SectionDataName = section;
+        SectionDataName = section;
+        FileDataName = file;
 
-        var nodes = DialogueReader.Instance.DialogueData[file][section];
+        var nodes = DialogueReader.Instance.DialogueData[FileDataName][SectionDataName];
+        var currentNode = nodes[lineId];
 
-        foreach (DialogueNode node in nodes)
+        if (currentNode is DialogueTextNode text)
         {
-            if (node is DialogueTextNode text)
-            {
-                NextDialogue(node);
-            }
-            else if (node is DialogueChoiceNode choice)
-            {
-                ShowChoices(choice);
-                break; // wait for player input
-            }
+            NextDialogue(currentNode);
         }
+        //else if (currentNode is DialogueChoiceNode choice)
+        //{
+        //    ShowChoices(currentNode);
+        //    break; // wait for player input
+        //}
     }
 
     void ShowLine(DialogueLine line)
@@ -211,8 +185,6 @@ public class DialogueController : MonoBehaviour
 
     public void SelectChoiceByKeyControl(KeyCode code)
     {
-        SnapConversation(currentNodeArgs);
-
         switch (code)
         {
             case KeyCode.Space:
@@ -232,10 +204,23 @@ public class DialogueController : MonoBehaviour
     {
         if (currentNodeArgs is DialogueTextNode)
         {
-            if (LineDataId <= DialogueReader.Instance.DialogueData[FileDataName][SectionDataName].Count - 1)
+            if (currentMessageRoutine != null)
             {
-                // Look at next line
+                UnityEngine.Debug.LogWarning("Snap to end of dialogue");
+
+                // We are still trying to display it. Snap to end
+                SnapConversation(currentNodeArgs);
+                return;
+            }
+            else if (LineDataId < DialogueReader.Instance.DialogueData[FileDataName][SectionDataName].Count - 1)
+            {
+                UnityEngine.Debug.LogWarning("Look at next line");
+
+                //// Look at next line
                 LineDataId++;
+
+                // Read the (next) section with new lineId
+                JumpToSectionLine(FileDataName, SectionDataName, LineDataId);
             }
             else
             {
@@ -246,9 +231,6 @@ public class DialogueController : MonoBehaviour
         {
             UnityEngine.Debug.LogWarning("Cannot skip option. Use Q or E");
         }
-
-        // Read the (next) section with new lineId
-        PlaySection(FileDataName, SectionDataName);
     }
 
     public void SelectChoiceByIndex(int index)
@@ -266,7 +248,7 @@ public class DialogueController : MonoBehaviour
     public void OnChoiceSelected(DialogueChoice choice)
     {
         ClearChoices();
-        PlaySection(FileDataName, choice.NextSection);
+        JumpToSectionLine(FileDataName, choice.NextSection, 0);
     }
 
 

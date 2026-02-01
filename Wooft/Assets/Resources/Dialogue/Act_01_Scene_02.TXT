@@ -1,6 +1,7 @@
 #INTRO
 [KING]: Welcome to my court.
 [THE STRANGER]: I came uninvited.
+[THE STRANGER]: Arn't we all?
 
 // This is where the fun begins
 #BATTLE
