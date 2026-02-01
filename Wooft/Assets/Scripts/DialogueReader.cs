@@ -14,7 +14,7 @@ public class DialogueReader : MonoBehaviour
         = new();
 
     public const string SECTIION_DEFAULT = "DEFAULT";
-    public const string SPEAKER_DEFAULT = "NARRATOR";
+    public const string SPEAKER_DEFAULT = "";
 
     protected void Awake()
     {
