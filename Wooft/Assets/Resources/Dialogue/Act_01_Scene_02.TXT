@@ -1,9 +1,18 @@
 #INTRO
-[KING]: Welcome to my court.
-[THE STRANGER]: I came uninvited.
-[THE STRANGER]: Arn't we all?
+[CAMILLA]:  You, sir, should unmask.
+[THE STRANGER]: Indeed?
+[CAMILLA]:  Indeed, it's time. We all have laid aside disguise but you.
 
-// This is where the fun begins
-#BATTLE
-You dare challenge me?
-Prepare yourself
+? Will you obey?
+-> Remove it | UNMASK
+-> Refuse | REFUSE
+
+#UNMASK
+[NARRATOR]: The court gasps as you gesture to tear an imaginary mask off your face, and toss it into the air as the others did before you.
+[NARRATOR]: Only now you feel the pressure of something around your forehead, Sitting atop your ears. A flash of white in the corner of your eyes.
+[NARRATOR]: ...Upon your mask now rests a face.
+
+#REFUSE
+[THE STRANGER]: I wear no mask.
+[CAMILLA]: (Terrified, aside to Cassilda) No mask? No mask!
+[NARRATOR]: A silence follows, thick as velvet. The Stranger stands bare-faced. The courtiers recoil, then recover with practised grace.

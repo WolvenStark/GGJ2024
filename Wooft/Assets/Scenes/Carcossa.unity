@@ -5651,20 +5651,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1655262096, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
-      propertyPath: m_text
-      value: '[Q] and [E] to Interact'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1840961802, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
-      propertyPath: m_text
-      value: '[Q]     [E]
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922800953, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2259623672081088131, guid: e419ceb95525a5446b2bfce0720885e5, type: 3}
       propertyPath: m_Name
       value: GameUI
