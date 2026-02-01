@@ -104,7 +104,7 @@ public class InteractionSystem : MonoBehaviour
 
                 if (isKeyDown)
                 {
-                    Debug.Log($"The key {selectedKey} is down");
+                    //Debug.Log($"The key {selectedKey} is down");
                     activeKeyDown = selectedKey;
                     return true;
                 }

@@ -40,7 +40,10 @@ A silence follows, thick as velvet. The Stranger stands bare-faced. The courtier
 [THE KING]: Though ...Faces are far more dangerous.
 
 #ALWAYSTHESAME
-[THE STRANGER]: Yes. I don't know how to be anyone other than myself
+[THE STRANGER]: Yes. I don't know how to be anyone other than myself.
+[THE KING]: But you do not know yourself.
+[THE STRANGER]: No one knows the Stranger. For if they did, I wouldn't be a Stranger, would I?
+[THE KING]: Indeed.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #ALWAYSCHANGING
