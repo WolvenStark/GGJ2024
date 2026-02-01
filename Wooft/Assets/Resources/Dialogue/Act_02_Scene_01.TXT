@@ -1,7 +1,0 @@
-#INTRO
-This is a new world
-
-// This is a comment
-#DECISION
-Who are ye to sit upon the throne
-Get ready

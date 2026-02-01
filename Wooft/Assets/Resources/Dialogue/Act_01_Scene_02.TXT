@@ -1,24 +1,31 @@
 #INTRO
+The hall receives you as though it has been waiting.
+The courtiers stand in loose ranks, pale masks lifted at last from obedient faces. Some are set carefully aside.
+Others are loosed to the floor, discarded with a faint, practiced relief. What is revealed is not relief.
+The silken void whispers. Breath returns.
+At the far end, the throne rests.
+What sits there does not rise, yet nothing in the hall stands apart from it.
 [CAMILLA]:  You, sir, should unmask.
 [THE STRANGER]: Indeed?
-[CASSILDA]:  Indeed, it's time. We all have laid aside disguise but you.
+[CASSILDA]: Indeed, it's time. We all have laid aside disguise but you.
 
 ? Will you obey?
 -> Remove it | UNMASK
 -> Refuse | REFUSE
 
 #UNMASK
-The court gasps as you gesture to tear an imaginary mask off your face, and toss it into the air as the others did before you.
-Only now you feel the pressure of something around your forehead, Sitting atop your ears. A flash of white in the corner of your eyes.
-...Upon your face now rests a mask
-[THE KING]: The face is gone. Yet the void has a name, and it whispers yours.
-[THE STRANGER]: Names belong to the owned. I am nothing that can be owned.
-[THE KING]: Once you are known, do you not belong to everyone else?
-[THE STRANGER]: Does one ever truly know another? Would you ever want to know..Completely?
-[THE KING]: No. Most enjoy the blissful ignorance that comes with knowing another's mask instead of their face.
-[THE STRANGER]: All know your mask, King. 
-[THE KING]: Indeed, but few know my face.
-[THE STRANGER]: Dosn't that make YOU the Stranger here?
+The court gasps as you raise your hands and mimic the tearing away of an unseen mask, casting it upward as the others once did.
+Yet at once you feel the weight of something upon your brow, resting where no hand placed it—pressing softly against your temples.
+A pale flicker skirts the edge of your sight.
+...A mask now rests upon your face.
+[THE KING]: The face departs. Yet the hollow it leaves is named—and it has learned to speak you.
+[THE STRANGER]: Names are given to what may be possessed. I am not such a thing.
+[THE KING]: Once you are named, are you not already claimed?
+[THE STRANGER]: Does one ever truly know another? And if one could—would one endure it?
+[THE KING]: No. Most are content with the mercy of ignorance, and call the mask the face.
+[THE STRANGER]: All know your mask, my King.
+[THE KING]: Indeed. Few have ever sought my face.
+[THE STRANGER]: Then are you not the Stranger here?
 
 ? Is the king a stranger to his subjects?
 -> Yes. He must be. | KINGUNLOVED
@@ -27,41 +34,41 @@ Only now you feel the pressure of something around your forehead, Sitting atop y
 #REFUSE
 [THE STRANGER]: I wear no mask.
 [CAMILLA]: (Terrified, aside to Cassilda) No mask? No mask!
-A silence follows, thick as velvet. The Stranger stands bare-faced. The courtiers recoil, then recover with practised grace.
-[THE KING]: You carry no mask. Do you believe that makes you unseen?
-[THE STRANGER]: I wished to come as I am.
-[THE KING]: And are you? The very same you were a second ago? Yesterday?
+Silence falls—heavy, sumptuous. The Stranger stands unveiled. The courtiers draw back, then compose themselves with practised elegance.
+The silence lingers, indulgent, almost kind. Then it allows a voice to speak.
+[THE KING]: You come unmasked. Do you imagine that makes you unseen?
+[THE STRANGER]: I wished to arrive as I am.
+[THE KING]: And are you so certain that you are unchanged? From a moment past? From yesterday?
 
 ? Are you the same?
 -> Of course | ALWAYSTHESAME
 -> No | ALWAYSCHANGING
 
-#ARRIVAL
-[THE KING]: Though ...Faces are far more dangerous.
-
 #ALWAYSTHESAME
-[THE STRANGER]: Yes. I don't know how to be anyone other than myself.
-[THE KING]: But you do not know yourself.
-[THE STRANGER]: No one knows the Stranger. For if they did, I wouldn't be a Stranger, would I?
-[THE KING]: Indeed.
+[THE STRANGER]: Yes. I know no other way of being.
+[THE KING]: Then you are most deceived.
+[THE STRANGER]: None know the Stranger. For once known, he ceases to be one.
+[THE KING]: Just so. But I now know you.
+[THE STRANGER]: Then I must bid thee farewell, my King.
+[THE KING]: Farewell.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #ALWAYSCHANGING
-[THE STRANGER]: I am still a stranger to you. That is enough.
+[THE STRANGER]: I remain a stranger to you. That must suffice.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #KINGUNLOVED
 [THE KING]: All know of me. Where I walk it is never as an intruder ...but as someone who has always been expected.
-[THE STRANGER]: I am always expected, until one becomes known.
-[THE KING]: Do you ever revisit a mask?
-[THE STRANGER]: No. But i often revisist a face.
+[THE STRANGER]: Anticipation ends the moment one is known.
+[THE KING]: Do you ever return to a mask once cast aside?
+[THE STRANGER]: Never. Though I have been known to revisit a face.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #KINGLOVED
-[THE KING]: Ah. They say so. They say many things. They know the mask.
-[THE STRANGER]: Is to know not, to love? To understand? You cannot know a Stranger.
-[THE KING]: My subjects love what I spare them from: the silence behind the world, the knowledge that the mask might slip.
-[THE KING]: If they loved me, truly, they would beg me to leave.
-[THE STRANGER]: But they do not.
-[THE KING]: So I remain. And they call that love.
+[THE KING]: Ah. They say so. They say many things. They know the mask well.
+[THE STRANGER]: Is knowledge love? Or merely familiarity? One cannot know a Stranger.
+[THE KING]: My subjects love what I withhold from them—the veil beyond the world, the terror that the mask may slip.
+[THE KING]: Were they to love me truly, they would beg me leave.
+[THE STRANGER]: Yet they do not.
+[THE KING]: And so I remain. And this they name love.
 YOU HAVE REACHED THE END OF THE DEMO.
