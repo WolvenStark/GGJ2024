@@ -120,11 +120,10 @@ public class DialogueController : MonoBehaviour
         {
             NextDialogue(currentNode);
         }
-        //else if (currentNode is DialogueChoiceNode choice)
-        //{
-        //    ShowChoices(currentNode);
-        //    break; // wait for player input
-        //}
+        else if (currentNode is DialogueChoiceNode choice)
+        {
+            ShowChoices(currentNode as DialogueChoiceNode);
+        }
     }
 
     void ShowLine(DialogueLine line)
@@ -166,6 +165,7 @@ public class DialogueController : MonoBehaviour
     public void ShowChoices(DialogueChoiceNode node)
     {
         ClearChoices();
+        currentNodeArgs = node;
 
         foreach (var option in node.choices)
         {
@@ -212,7 +212,7 @@ public class DialogueController : MonoBehaviour
                 SnapConversation(currentNodeArgs);
                 return;
             }
-            else if (LineDataId < DialogueReader.Instance.DialogueData[FileDataName][SectionDataName].Count - 1)
+            else if (LineDataId <= DialogueReader.Instance.DialogueData[FileDataName][SectionDataName].Count - 1)
             {
                 UnityEngine.Debug.LogWarning("Look at next line");
 
