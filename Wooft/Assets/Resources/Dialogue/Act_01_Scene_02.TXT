@@ -46,15 +46,21 @@ The silence lingers, indulgent, almost kind. Then it allows a voice to speak.
 
 #ALWAYSTHESAME
 [THE STRANGER]: Yes. I know no other way of being.
-[THE KING]: Then you are most deceived.
+[CAMILLA]: Then you are most deceived.
 [THE STRANGER]: None know the Stranger. For once known, he ceases to be one.
 [THE KING]: Just so. But I now know you.
-[THE STRANGER]: Then I must bid thee farewell, my King.
-[THE KING]: Farewell.
+[THE STRANGER]: You know my mask, my King, as I know yours. I have read the third act.
+[CASSILDA]: There is no third act.
+[THE KING]: Then why do you tremble as though it had only just begun?
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #ALWAYSCHANGING
-[THE STRANGER]: I remain a stranger to you. That must suffice.
+[THE STRANGER]: No. I am not the same. I have never remained.
+[CAMILLA]: An honest face. How rare. Yet here you stand.
+[THE STRANGER]: I remain a stranger to you, my King. That must suffice.
+[THE KING]: As you must. For once you are known you would belong.
+[THE STRANGER]: Belonging is not a mask I can wear, my King.
+[THE KING]: Indeed.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #KINGUNLOVED
@@ -62,6 +68,8 @@ YOU HAVE REACHED THE END OF THE DEMO.
 [THE STRANGER]: Anticipation ends the moment one is known.
 [THE KING]: Do you ever return to a mask once cast aside?
 [THE STRANGER]: Never. Though I have been known to revisit a face.
+[THE KING]: And what face do you expect to find hidden beneath MY mask?
+[THE STRANGER]: My own. For if a King must remain a Stranger, then only The Stranger should be The King.
 YOU HAVE REACHED THE END OF THE DEMO.
 
 #KINGLOVED
@@ -71,4 +79,5 @@ YOU HAVE REACHED THE END OF THE DEMO.
 [THE KING]: Were they to love me truly, they would beg me leave.
 [THE STRANGER]: Yet they do not.
 [THE KING]: And so I remain. And this they name love.
+[THE STRANGER]: Would you beg ME leave, my King?
 YOU HAVE REACHED THE END OF THE DEMO.
