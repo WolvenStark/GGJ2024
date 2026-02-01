@@ -7,12 +7,34 @@
 -> Remove it | UNMASK
 -> Refuse | REFUSE
 
-#UNMASK
+#UNMASK | #ARRIVAL
 The court gasps as you gesture to tear an imaginary mask off your face, and toss it into the air as the others did before you.
 Only now you feel the pressure of something around your forehead, Sitting atop your ears. A flash of white in the corner of your eyes.
-...Upon your mask now rests a face.
+...Upon your face now rests a mask
+[THE KING]: The face is gone. Yet the void has a name, and it whispers yours.
+[THE STRANGER]: Names belong to the owned. I am nothing that can be owned.
+[THE KING]: Once you are known, do you not belong to everyone else.
+[THE STRANGER]: Does one ever truly know another? Would you ever want to know..Completely?
+[THE KING]: Most enjoy the blissful ignorance that comes with knowing another's mask instead of their face.
+[THE STRANGER]: All know your face, King. 
 
 #REFUSE
 [THE STRANGER]: I wear no mask.
 [CAMILLA]: (Terrified, aside to Cassilda) No mask? No mask!
 A silence follows, thick as velvet. The Stranger stands bare-faced. The courtiers recoil, then recover with practised grace.
+[THE KING]: You carry no mask. Do you believe that makes you unseen?
+[THE STRANGER]: I wished to come as I am.
+[THE KING]: And have you? The very same you were a second ago? When you first entered this court?
+
+? Are you the same?
+-> Of course | ALWAYSTHESAME
+-> No | ALWAYSCHANGING
+
+#ARRIVAL
+[THE KING]: Though ...Faces are far more dangerous.
+
+#ALWAYSTHESAME
+[THE STRANGER]: Yes. I don't know how to be anyone other than myself
+
+#ALWAYSCHANGING
+[THE STRANGER]: I am still a stranger to you. That is enough.
